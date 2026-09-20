@@ -1,0 +1,3299 @@
+[
+  {
+    "expected": "company.raw",
+    "context": {
+      "application": {
+        "name": "Google Chrome",
+        "bundleId": "com.google.Chrome"
+      },
+      "window": {
+        "title": "取引先情報入力"
+      },
+      "page": {
+        "domain": "example.com",
+        "title": "お申し込みフォーム"
+      },
+      "field": {
+        "role": "AXTextField",
+        "subrole": null,
+        "title": "会社名",
+        "placeholder": null,
+        "description": null,
+        "help": null,
+        "nearbyTexts": [
+          "会社名"
+        ]
+      }
+    },
+    "id": "case-001"
+  },
+  {
+    "expected": "company.raw",
+    "context": {
+      "application": {
+        "name": "Google Chrome",
+        "bundleId": "com.google.Chrome"
+      },
+      "window": {
+        "title": "取引先情報入力"
+      },
+      "page": {
+        "domain": "example.com",
+        "title": "お申し込みフォーム"
+      },
+      "field": {
+        "role": "AXTextField",
+        "subrole": null,
+        "title": "貴社名",
+        "placeholder": null,
+        "description": null,
+        "help": null,
+        "nearbyTexts": [
+          "貴社名"
+        ]
+      }
+    },
+    "id": "case-002"
+  },
+  {
+    "expected": "company.raw",
+    "context": {
+      "application": {
+        "name": "Google Chrome",
+        "bundleId": "com.google.Chrome"
+      },
+      "window": {
+        "title": "取引先情報入力"
+      },
+      "page": {
+        "domain": "example.com",
+        "title": "お申し込みフォーム"
+      },
+      "field": {
+        "role": "AXTextField",
+        "subrole": null,
+        "title": "法人名",
+        "placeholder": null,
+        "description": null,
+        "help": null,
+        "nearbyTexts": [
+          "法人名"
+        ]
+      }
+    },
+    "id": "case-003"
+  },
+  {
+    "expected": "company.raw",
+    "context": {
+      "application": {
+        "name": "Google Chrome",
+        "bundleId": "com.google.Chrome"
+      },
+      "window": {
+        "title": "取引先情報入力"
+      },
+      "page": {
+        "domain": "example.com",
+        "title": "お申し込みフォーム"
+      },
+      "field": {
+        "role": "AXTextField",
+        "subrole": null,
+        "title": "企業名",
+        "placeholder": null,
+        "description": null,
+        "help": null,
+        "nearbyTexts": [
+          "企業名"
+        ]
+      }
+    },
+    "id": "case-004"
+  },
+  {
+    "expected": "company.raw",
+    "context": {
+      "application": {
+        "name": "Google Chrome",
+        "bundleId": "com.google.Chrome"
+      },
+      "window": {
+        "title": "取引先情報入力"
+      },
+      "page": {
+        "domain": "example.com",
+        "title": "お申し込みフォーム"
+      },
+      "field": {
+        "role": "AXTextField",
+        "subrole": null,
+        "title": "商号",
+        "placeholder": null,
+        "description": null,
+        "help": null,
+        "nearbyTexts": [
+          "商号"
+        ]
+      }
+    },
+    "id": "case-005"
+  },
+  {
+    "expected": "company.raw",
+    "context": {
+      "application": {
+        "name": "Google Chrome",
+        "bundleId": "com.google.Chrome"
+      },
+      "window": {
+        "title": "取引先情報入力"
+      },
+      "page": {
+        "domain": "example.com",
+        "title": "お申し込みフォーム"
+      },
+      "field": {
+        "role": "AXTextField",
+        "subrole": null,
+        "title": "お勤め先",
+        "placeholder": null,
+        "description": null,
+        "help": null,
+        "nearbyTexts": [
+          "お勤め先"
+        ]
+      }
+    },
+    "id": "case-006"
+  },
+  {
+    "expected": "company.no_legal_entity",
+    "context": {
+      "application": {
+        "name": "Google Chrome",
+        "bundleId": "com.google.Chrome"
+      },
+      "window": {
+        "title": "取引先情報入力"
+      },
+      "page": {
+        "domain": "example.com",
+        "title": "お申し込みフォーム"
+      },
+      "field": {
+        "role": "AXTextField",
+        "subrole": null,
+        "title": "会社名",
+        "placeholder": "株式会社等は除く",
+        "description": null,
+        "help": null,
+        "nearbyTexts": [
+          "会社名"
+        ]
+      }
+    },
+    "id": "case-007"
+  },
+  {
+    "expected": "company.no_legal_entity",
+    "context": {
+      "application": {
+        "name": "Google Chrome",
+        "bundleId": "com.google.Chrome"
+      },
+      "window": {
+        "title": "取引先情報入力"
+      },
+      "page": {
+        "domain": "example.com",
+        "title": "お申し込みフォーム"
+      },
+      "field": {
+        "role": "AXTextField",
+        "subrole": null,
+        "title": "会社名（株式会社不要）",
+        "placeholder": null,
+        "description": null,
+        "help": null,
+        "nearbyTexts": [
+          "会社名（株式会社不要）"
+        ]
+      }
+    },
+    "id": "case-008"
+  },
+  {
+    "expected": "company.no_legal_entity",
+    "context": {
+      "application": {
+        "name": "Google Chrome",
+        "bundleId": "com.google.Chrome"
+      },
+      "window": {
+        "title": "取引先情報入力"
+      },
+      "page": {
+        "domain": "example.com",
+        "title": "お申し込みフォーム"
+      },
+      "field": {
+        "role": "AXTextField",
+        "subrole": null,
+        "title": "法人種別を除く会社名",
+        "placeholder": null,
+        "description": null,
+        "help": null,
+        "nearbyTexts": [
+          "法人種別を除く会社名"
+        ]
+      }
+    },
+    "id": "case-009"
+  },
+  {
+    "expected": "company.no_legal_entity",
+    "context": {
+      "application": {
+        "name": "Google Chrome",
+        "bundleId": "com.google.Chrome"
+      },
+      "window": {
+        "title": "取引先情報入力"
+      },
+      "page": {
+        "domain": "example.com",
+        "title": "お申し込みフォーム"
+      },
+      "field": {
+        "role": "AXTextField",
+        "subrole": null,
+        "title": "会社名",
+        "placeholder": null,
+        "description": null,
+        "help": null,
+        "nearbyTexts": [
+          "会社名",
+          "株式会社・合同会社などの表記は不要です"
+        ]
+      }
+    },
+    "id": "case-010"
+  },
+  {
+    "expected": "company_en.raw",
+    "context": {
+      "application": {
+        "name": "Google Chrome",
+        "bundleId": "com.google.Chrome"
+      },
+      "window": {
+        "title": "Contact"
+      },
+      "page": {
+        "domain": "example.com",
+        "title": "Contact us"
+      },
+      "field": {
+        "role": "AXTextField",
+        "subrole": null,
+        "title": "Company",
+        "placeholder": null,
+        "description": null,
+        "help": null,
+        "nearbyTexts": [
+          "Company"
+        ]
+      }
+    },
+    "id": "case-011"
+  },
+  {
+    "expected": "company_kana.raw",
+    "context": {
+      "application": {
+        "name": "Google Chrome",
+        "bundleId": "com.google.Chrome"
+      },
+      "window": {
+        "title": "取引先情報入力"
+      },
+      "page": {
+        "domain": "example.com",
+        "title": "お申し込みフォーム"
+      },
+      "field": {
+        "role": "AXTextField",
+        "subrole": null,
+        "title": "会社名フリガナ",
+        "placeholder": null,
+        "description": null,
+        "help": null,
+        "nearbyTexts": [
+          "会社名フリガナ"
+        ]
+      }
+    },
+    "id": "case-012"
+  },
+  {
+    "expected": "company_kana.raw",
+    "context": {
+      "application": {
+        "name": "Google Chrome",
+        "bundleId": "com.google.Chrome"
+      },
+      "window": {
+        "title": "取引先情報入力"
+      },
+      "page": {
+        "domain": "example.com",
+        "title": "お申し込みフォーム"
+      },
+      "field": {
+        "role": "AXTextField",
+        "subrole": null,
+        "title": "会社名カナ",
+        "placeholder": null,
+        "description": null,
+        "help": null,
+        "nearbyTexts": [
+          "会社名カナ"
+        ]
+      }
+    },
+    "id": "case-013"
+  },
+  {
+    "expected": "company_kana.raw",
+    "context": {
+      "application": {
+        "name": "Google Chrome",
+        "bundleId": "com.google.Chrome"
+      },
+      "window": {
+        "title": "取引先情報入力"
+      },
+      "page": {
+        "domain": "example.com",
+        "title": "お申し込みフォーム"
+      },
+      "field": {
+        "role": "AXTextField",
+        "subrole": null,
+        "title": "貴社名ふりがな",
+        "placeholder": null,
+        "description": null,
+        "help": null,
+        "nearbyTexts": [
+          "貴社名ふりがな"
+        ]
+      }
+    },
+    "id": "case-014"
+  },
+  {
+    "expected": "company_kana.no_legal_entity",
+    "context": {
+      "application": {
+        "name": "Google Chrome",
+        "bundleId": "com.google.Chrome"
+      },
+      "window": {
+        "title": "取引先情報入力"
+      },
+      "page": {
+        "domain": "example.com",
+        "title": "お申し込みフォーム"
+      },
+      "field": {
+        "role": "AXTextField",
+        "subrole": null,
+        "title": "会社名フリガナ",
+        "placeholder": "株式会社等の表記は除く",
+        "description": null,
+        "help": null,
+        "nearbyTexts": [
+          "会社名フリガナ"
+        ]
+      }
+    },
+    "id": "case-015"
+  },
+  {
+    "expected": "company_kana.no_legal_entity",
+    "context": {
+      "application": {
+        "name": "Google Chrome",
+        "bundleId": "com.google.Chrome"
+      },
+      "window": {
+        "title": "取引先情報入力"
+      },
+      "page": {
+        "domain": "example.com",
+        "title": "お申し込みフォーム"
+      },
+      "field": {
+        "role": "AXTextField",
+        "subrole": null,
+        "title": "商号カナ",
+        "placeholder": "法人格不要",
+        "description": null,
+        "help": null,
+        "nearbyTexts": [
+          "商号カナ"
+        ]
+      }
+    },
+    "id": "case-016"
+  },
+  {
+    "expected": "name.raw",
+    "context": {
+      "application": {
+        "name": "Google Chrome",
+        "bundleId": "com.google.Chrome"
+      },
+      "window": {
+        "title": "取引先情報入力"
+      },
+      "page": {
+        "domain": "example.com",
+        "title": "お申し込みフォーム"
+      },
+      "field": {
+        "role": "AXTextField",
+        "subrole": null,
+        "title": "氏名",
+        "placeholder": null,
+        "description": null,
+        "help": null,
+        "nearbyTexts": [
+          "氏名"
+        ]
+      }
+    },
+    "id": "case-017"
+  },
+  {
+    "expected": "name.raw",
+    "context": {
+      "application": {
+        "name": "Google Chrome",
+        "bundleId": "com.google.Chrome"
+      },
+      "window": {
+        "title": "取引先情報入力"
+      },
+      "page": {
+        "domain": "example.com",
+        "title": "お申し込みフォーム"
+      },
+      "field": {
+        "role": "AXTextField",
+        "subrole": null,
+        "title": "お名前",
+        "placeholder": null,
+        "description": null,
+        "help": null,
+        "nearbyTexts": [
+          "お名前"
+        ]
+      }
+    },
+    "id": "case-018"
+  },
+  {
+    "expected": "name.raw",
+    "context": {
+      "application": {
+        "name": "Google Chrome",
+        "bundleId": "com.google.Chrome"
+      },
+      "window": {
+        "title": "取引先情報入力"
+      },
+      "page": {
+        "domain": "example.com",
+        "title": "お申し込みフォーム"
+      },
+      "field": {
+        "role": "AXTextField",
+        "subrole": null,
+        "title": "ご担当者名",
+        "placeholder": null,
+        "description": null,
+        "help": null,
+        "nearbyTexts": [
+          "ご担当者名"
+        ]
+      }
+    },
+    "id": "case-019"
+  },
+  {
+    "expected": "name.raw",
+    "context": {
+      "application": {
+        "name": "Google Chrome",
+        "bundleId": "com.google.Chrome"
+      },
+      "window": {
+        "title": "取引先情報入力"
+      },
+      "page": {
+        "domain": "example.com",
+        "title": "お申し込みフォーム"
+      },
+      "field": {
+        "role": "AXTextField",
+        "subrole": null,
+        "title": "代表者名",
+        "placeholder": null,
+        "description": null,
+        "help": null,
+        "nearbyTexts": [
+          "代表者名"
+        ]
+      }
+    },
+    "id": "case-020"
+  },
+  {
+    "expected": "name.no_space",
+    "context": {
+      "application": {
+        "name": "Google Chrome",
+        "bundleId": "com.google.Chrome"
+      },
+      "window": {
+        "title": "取引先情報入力"
+      },
+      "page": {
+        "domain": "example.com",
+        "title": "お申し込みフォーム"
+      },
+      "field": {
+        "role": "AXTextField",
+        "subrole": null,
+        "title": "氏名",
+        "placeholder": "スペースなしで入力",
+        "description": null,
+        "help": null,
+        "nearbyTexts": [
+          "氏名"
+        ]
+      }
+    },
+    "id": "case-021"
+  },
+  {
+    "expected": "name.no_space",
+    "context": {
+      "application": {
+        "name": "Google Chrome",
+        "bundleId": "com.google.Chrome"
+      },
+      "window": {
+        "title": "取引先情報入力"
+      },
+      "page": {
+        "domain": "example.com",
+        "title": "お申し込みフォーム"
+      },
+      "field": {
+        "role": "AXTextField",
+        "subrole": null,
+        "title": "お名前",
+        "placeholder": null,
+        "description": null,
+        "help": null,
+        "nearbyTexts": [
+          "お名前",
+          "姓と名の間にスペースを入れないでください"
+        ]
+      }
+    },
+    "id": "case-022"
+  },
+  {
+    "expected": "name.full_width",
+    "context": {
+      "application": {
+        "name": "Google Chrome",
+        "bundleId": "com.google.Chrome"
+      },
+      "window": {
+        "title": "取引先情報入力"
+      },
+      "page": {
+        "domain": "example.com",
+        "title": "お申し込みフォーム"
+      },
+      "field": {
+        "role": "AXTextField",
+        "subrole": null,
+        "title": "氏名",
+        "placeholder": null,
+        "description": null,
+        "help": null,
+        "nearbyTexts": [
+          "氏名",
+          "姓と名の間は全角スペースで区切ってください"
+        ]
+      }
+    },
+    "id": "case-023"
+  },
+  {
+    "expected": "name.full_width",
+    "context": {
+      "application": {
+        "name": "Google Chrome",
+        "bundleId": "com.google.Chrome"
+      },
+      "window": {
+        "title": "取引先情報入力"
+      },
+      "page": {
+        "domain": "example.com",
+        "title": "お申し込みフォーム"
+      },
+      "field": {
+        "role": "AXTextField",
+        "subrole": null,
+        "title": "お名前（全角）",
+        "placeholder": "山田　太郎",
+        "description": null,
+        "help": null,
+        "nearbyTexts": [
+          "お名前（全角）"
+        ]
+      }
+    },
+    "id": "case-024"
+  },
+  {
+    "expected": "name_roman.raw",
+    "context": {
+      "application": {
+        "name": "Google Chrome",
+        "bundleId": "com.google.Chrome"
+      },
+      "window": {
+        "title": "Sign up"
+      },
+      "page": {
+        "domain": "example.com",
+        "title": "Sign up"
+      },
+      "field": {
+        "role": "AXTextField",
+        "subrole": null,
+        "title": "Full name",
+        "placeholder": null,
+        "description": null,
+        "help": null,
+        "nearbyTexts": [
+          "Full name"
+        ]
+      }
+    },
+    "id": "case-025"
+  },
+  {
+    "expected": "name_kana.raw",
+    "context": {
+      "application": {
+        "name": "Google Chrome",
+        "bundleId": "com.google.Chrome"
+      },
+      "window": {
+        "title": "取引先情報入力"
+      },
+      "page": {
+        "domain": "example.com",
+        "title": "お申し込みフォーム"
+      },
+      "field": {
+        "role": "AXTextField",
+        "subrole": null,
+        "title": "氏名カナ",
+        "placeholder": null,
+        "description": null,
+        "help": null,
+        "nearbyTexts": [
+          "氏名カナ"
+        ]
+      }
+    },
+    "id": "case-026"
+  },
+  {
+    "expected": "name_kana.raw",
+    "context": {
+      "application": {
+        "name": "Google Chrome",
+        "bundleId": "com.google.Chrome"
+      },
+      "window": {
+        "title": "取引先情報入力"
+      },
+      "page": {
+        "domain": "example.com",
+        "title": "お申し込みフォーム"
+      },
+      "field": {
+        "role": "AXTextField",
+        "subrole": null,
+        "title": "フリガナ",
+        "placeholder": null,
+        "description": null,
+        "help": null,
+        "nearbyTexts": [
+          "お名前",
+          "フリガナ"
+        ]
+      }
+    },
+    "id": "case-027"
+  },
+  {
+    "expected": "name_kana.raw",
+    "context": {
+      "application": {
+        "name": "Google Chrome",
+        "bundleId": "com.google.Chrome"
+      },
+      "window": {
+        "title": "取引先情報入力"
+      },
+      "page": {
+        "domain": "example.com",
+        "title": "お申し込みフォーム"
+      },
+      "field": {
+        "role": "AXTextField",
+        "subrole": null,
+        "title": "お名前（カナ）",
+        "placeholder": null,
+        "description": null,
+        "help": null,
+        "nearbyTexts": [
+          "お名前（カナ）"
+        ]
+      }
+    },
+    "id": "case-028"
+  },
+  {
+    "expected": "name_kana.no_space",
+    "context": {
+      "application": {
+        "name": "Google Chrome",
+        "bundleId": "com.google.Chrome"
+      },
+      "window": {
+        "title": "取引先情報入力"
+      },
+      "page": {
+        "domain": "example.com",
+        "title": "お申し込みフォーム"
+      },
+      "field": {
+        "role": "AXTextField",
+        "subrole": null,
+        "title": "氏名カナ",
+        "placeholder": "スペースを入れずに入力",
+        "description": null,
+        "help": null,
+        "nearbyTexts": [
+          "氏名カナ"
+        ]
+      }
+    },
+    "id": "case-029"
+  },
+  {
+    "expected": "name_kana.full_width",
+    "context": {
+      "application": {
+        "name": "Google Chrome",
+        "bundleId": "com.google.Chrome"
+      },
+      "window": {
+        "title": "取引先情報入力"
+      },
+      "page": {
+        "domain": "example.com",
+        "title": "お申し込みフォーム"
+      },
+      "field": {
+        "role": "AXTextField",
+        "subrole": null,
+        "title": "フリガナ",
+        "placeholder": null,
+        "description": null,
+        "help": null,
+        "nearbyTexts": [
+          "フリガナ",
+          "全角カタカナ、姓名の間は全角スペース"
+        ]
+      }
+    },
+    "id": "case-030"
+  },
+  {
+    "expected": "zip.raw",
+    "context": {
+      "application": {
+        "name": "Google Chrome",
+        "bundleId": "com.google.Chrome"
+      },
+      "window": {
+        "title": "取引先情報入力"
+      },
+      "page": {
+        "domain": "example.com",
+        "title": "お申し込みフォーム"
+      },
+      "field": {
+        "role": "AXTextField",
+        "subrole": null,
+        "title": "郵便番号",
+        "placeholder": null,
+        "description": null,
+        "help": null,
+        "nearbyTexts": [
+          "郵便番号"
+        ]
+      }
+    },
+    "id": "case-031"
+  },
+  {
+    "expected": "zip.raw",
+    "context": {
+      "application": {
+        "name": "Google Chrome",
+        "bundleId": "com.google.Chrome"
+      },
+      "window": {
+        "title": "取引先情報入力"
+      },
+      "page": {
+        "domain": "example.com",
+        "title": "お申し込みフォーム"
+      },
+      "field": {
+        "role": "AXTextField",
+        "subrole": null,
+        "title": "〒",
+        "placeholder": null,
+        "description": null,
+        "help": null,
+        "nearbyTexts": [
+          "〒",
+          "会社所在地"
+        ]
+      }
+    },
+    "id": "case-032"
+  },
+  {
+    "expected": "zip.no_hyphen",
+    "context": {
+      "application": {
+        "name": "Google Chrome",
+        "bundleId": "com.google.Chrome"
+      },
+      "window": {
+        "title": "取引先情報入力"
+      },
+      "page": {
+        "domain": "example.com",
+        "title": "お申し込みフォーム"
+      },
+      "field": {
+        "role": "AXTextField",
+        "subrole": null,
+        "title": "郵便番号（ハイフンなし）",
+        "placeholder": null,
+        "description": null,
+        "help": null,
+        "nearbyTexts": [
+          "郵便番号（ハイフンなし）"
+        ]
+      }
+    },
+    "id": "case-033"
+  },
+  {
+    "expected": "zip.no_hyphen",
+    "context": {
+      "application": {
+        "name": "Google Chrome",
+        "bundleId": "com.google.Chrome"
+      },
+      "window": {
+        "title": "取引先情報入力"
+      },
+      "page": {
+        "domain": "example.com",
+        "title": "お申し込みフォーム"
+      },
+      "field": {
+        "role": "AXTextField",
+        "subrole": null,
+        "title": "郵便番号",
+        "placeholder": "ハイフンなし7桁",
+        "description": null,
+        "help": null,
+        "nearbyTexts": [
+          "郵便番号"
+        ]
+      }
+    },
+    "id": "case-034"
+  },
+  {
+    "expected": "zip.full_width",
+    "context": {
+      "application": {
+        "name": "Google Chrome",
+        "bundleId": "com.google.Chrome"
+      },
+      "window": {
+        "title": "取引先情報入力"
+      },
+      "page": {
+        "domain": "example.com",
+        "title": "お申し込みフォーム"
+      },
+      "field": {
+        "role": "AXTextField",
+        "subrole": null,
+        "title": "郵便番号",
+        "placeholder": null,
+        "description": null,
+        "help": null,
+        "nearbyTexts": [
+          "郵便番号",
+          "全角数字で入力してください"
+        ]
+      }
+    },
+    "id": "case-035"
+  },
+  {
+    "expected": "zip.zip_first3",
+    "context": {
+      "application": {
+        "name": "Google Chrome",
+        "bundleId": "com.google.Chrome"
+      },
+      "window": {
+        "title": "取引先情報入力"
+      },
+      "page": {
+        "domain": "example.com",
+        "title": "お申し込みフォーム"
+      },
+      "field": {
+        "role": "AXTextField",
+        "subrole": null,
+        "title": "郵便番号",
+        "placeholder": null,
+        "description": null,
+        "help": null,
+        "nearbyTexts": [
+          "郵便番号",
+          "-"
+        ],
+        "siblingIndex": 1,
+        "siblingCount": 2
+      }
+    },
+    "id": "case-036"
+  },
+  {
+    "expected": "zip.zip_last4",
+    "context": {
+      "application": {
+        "name": "Google Chrome",
+        "bundleId": "com.google.Chrome"
+      },
+      "window": {
+        "title": "取引先情報入力"
+      },
+      "page": {
+        "domain": "example.com",
+        "title": "お申し込みフォーム"
+      },
+      "field": {
+        "role": "AXTextField",
+        "subrole": null,
+        "title": "郵便番号",
+        "placeholder": null,
+        "description": null,
+        "help": null,
+        "nearbyTexts": [
+          "郵便番号",
+          "-"
+        ],
+        "siblingIndex": 2,
+        "siblingCount": 2
+      }
+    },
+    "id": "case-037"
+  },
+  {
+    "expected": "zip.zip_first3",
+    "context": {
+      "application": {
+        "name": "Google Chrome",
+        "bundleId": "com.google.Chrome"
+      },
+      "window": {
+        "title": "取引先情報入力"
+      },
+      "page": {
+        "domain": "example.com",
+        "title": "お申し込みフォーム"
+      },
+      "field": {
+        "role": "AXTextField",
+        "subrole": null,
+        "title": "郵便番号（前3桁）",
+        "placeholder": null,
+        "description": null,
+        "help": null,
+        "nearbyTexts": [
+          "郵便番号（前3桁）"
+        ]
+      }
+    },
+    "id": "case-038"
+  },
+  {
+    "expected": "zip.zip_last4",
+    "context": {
+      "application": {
+        "name": "Google Chrome",
+        "bundleId": "com.google.Chrome"
+      },
+      "window": {
+        "title": "取引先情報入力"
+      },
+      "page": {
+        "domain": "example.com",
+        "title": "お申し込みフォーム"
+      },
+      "field": {
+        "role": "AXTextField",
+        "subrole": null,
+        "title": "郵便番号（後4桁）",
+        "placeholder": null,
+        "description": null,
+        "help": null,
+        "nearbyTexts": [
+          "郵便番号（後4桁）"
+        ]
+      }
+    },
+    "id": "case-039"
+  },
+  {
+    "expected": "tel.raw",
+    "context": {
+      "application": {
+        "name": "Google Chrome",
+        "bundleId": "com.google.Chrome"
+      },
+      "window": {
+        "title": "取引先情報入力"
+      },
+      "page": {
+        "domain": "example.com",
+        "title": "お申し込みフォーム"
+      },
+      "field": {
+        "role": "AXTextField",
+        "subrole": null,
+        "title": "電話番号",
+        "placeholder": null,
+        "description": null,
+        "help": null,
+        "nearbyTexts": [
+          "電話番号"
+        ]
+      }
+    },
+    "id": "case-040"
+  },
+  {
+    "expected": "tel.raw",
+    "context": {
+      "application": {
+        "name": "Google Chrome",
+        "bundleId": "com.google.Chrome"
+      },
+      "window": {
+        "title": "取引先情報入力"
+      },
+      "page": {
+        "domain": "example.com",
+        "title": "お申し込みフォーム"
+      },
+      "field": {
+        "role": "AXTextField",
+        "subrole": null,
+        "title": "会社電話番号",
+        "placeholder": null,
+        "description": null,
+        "help": null,
+        "nearbyTexts": [
+          "会社電話番号"
+        ]
+      }
+    },
+    "id": "case-041"
+  },
+  {
+    "expected": "tel.raw",
+    "context": {
+      "application": {
+        "name": "Google Chrome",
+        "bundleId": "com.google.Chrome"
+      },
+      "window": {
+        "title": "取引先情報入力"
+      },
+      "page": {
+        "domain": "example.com",
+        "title": "お申し込みフォーム"
+      },
+      "field": {
+        "role": "AXTextField",
+        "subrole": null,
+        "title": "代表電話",
+        "placeholder": null,
+        "description": null,
+        "help": null,
+        "nearbyTexts": [
+          "代表電話"
+        ]
+      }
+    },
+    "id": "case-042"
+  },
+  {
+    "expected": "mobile.raw",
+    "context": {
+      "application": {
+        "name": "Google Chrome",
+        "bundleId": "com.google.Chrome"
+      },
+      "window": {
+        "title": "取引先情報入力"
+      },
+      "page": {
+        "domain": "example.com",
+        "title": "お申し込みフォーム"
+      },
+      "field": {
+        "role": "AXTextField",
+        "subrole": null,
+        "title": "携帯電話番号",
+        "placeholder": null,
+        "description": null,
+        "help": null,
+        "nearbyTexts": [
+          "携帯電話番号"
+        ]
+      }
+    },
+    "id": "case-043"
+  },
+  {
+    "expected": "tel.no_hyphen",
+    "context": {
+      "application": {
+        "name": "Google Chrome",
+        "bundleId": "com.google.Chrome"
+      },
+      "window": {
+        "title": "取引先情報入力"
+      },
+      "page": {
+        "domain": "example.com",
+        "title": "お申し込みフォーム"
+      },
+      "field": {
+        "role": "AXTextField",
+        "subrole": null,
+        "title": "電話番号",
+        "placeholder": "ハイフンなし",
+        "description": null,
+        "help": null,
+        "nearbyTexts": [
+          "電話番号"
+        ]
+      }
+    },
+    "id": "case-044"
+  },
+  {
+    "expected": "tel.full_width",
+    "context": {
+      "application": {
+        "name": "Google Chrome",
+        "bundleId": "com.google.Chrome"
+      },
+      "window": {
+        "title": "取引先情報入力"
+      },
+      "page": {
+        "domain": "example.com",
+        "title": "お申し込みフォーム"
+      },
+      "field": {
+        "role": "AXTextField",
+        "subrole": null,
+        "title": "電話番号",
+        "placeholder": null,
+        "description": null,
+        "help": null,
+        "nearbyTexts": [
+          "電話番号",
+          "全角で入力してください"
+        ]
+      }
+    },
+    "id": "case-045"
+  },
+  {
+    "expected": "tel.tel_part1",
+    "context": {
+      "application": {
+        "name": "Google Chrome",
+        "bundleId": "com.google.Chrome"
+      },
+      "window": {
+        "title": "取引先情報入力"
+      },
+      "page": {
+        "domain": "example.com",
+        "title": "お申し込みフォーム"
+      },
+      "field": {
+        "role": "AXTextField",
+        "subrole": null,
+        "title": "電話番号",
+        "placeholder": null,
+        "description": null,
+        "help": null,
+        "nearbyTexts": [
+          "電話番号",
+          "-",
+          "-"
+        ],
+        "siblingIndex": 1,
+        "siblingCount": 3
+      }
+    },
+    "id": "case-046"
+  },
+  {
+    "expected": "tel.tel_part2",
+    "context": {
+      "application": {
+        "name": "Google Chrome",
+        "bundleId": "com.google.Chrome"
+      },
+      "window": {
+        "title": "取引先情報入力"
+      },
+      "page": {
+        "domain": "example.com",
+        "title": "お申し込みフォーム"
+      },
+      "field": {
+        "role": "AXTextField",
+        "subrole": null,
+        "title": "電話番号",
+        "placeholder": null,
+        "description": null,
+        "help": null,
+        "nearbyTexts": [
+          "電話番号",
+          "-",
+          "-"
+        ],
+        "siblingIndex": 2,
+        "siblingCount": 3
+      }
+    },
+    "id": "case-047"
+  },
+  {
+    "expected": "tel.tel_part3",
+    "context": {
+      "application": {
+        "name": "Google Chrome",
+        "bundleId": "com.google.Chrome"
+      },
+      "window": {
+        "title": "取引先情報入力"
+      },
+      "page": {
+        "domain": "example.com",
+        "title": "お申し込みフォーム"
+      },
+      "field": {
+        "role": "AXTextField",
+        "subrole": null,
+        "title": "電話番号",
+        "placeholder": null,
+        "description": null,
+        "help": null,
+        "nearbyTexts": [
+          "電話番号",
+          "-",
+          "-"
+        ],
+        "siblingIndex": 3,
+        "siblingCount": 3
+      }
+    },
+    "id": "case-048"
+  },
+  {
+    "expected": "email.raw",
+    "context": {
+      "application": {
+        "name": "Google Chrome",
+        "bundleId": "com.google.Chrome"
+      },
+      "window": {
+        "title": "取引先情報入力"
+      },
+      "page": {
+        "domain": "example.com",
+        "title": "お申し込みフォーム"
+      },
+      "field": {
+        "role": "AXTextField",
+        "subrole": null,
+        "title": "メールアドレス",
+        "placeholder": null,
+        "description": null,
+        "help": null,
+        "nearbyTexts": [
+          "メールアドレス"
+        ]
+      }
+    },
+    "id": "case-049"
+  },
+  {
+    "expected": "email.raw",
+    "context": {
+      "application": {
+        "name": "Google Chrome",
+        "bundleId": "com.google.Chrome"
+      },
+      "window": {
+        "title": "取引先情報入力"
+      },
+      "page": {
+        "domain": "example.com",
+        "title": "お申し込みフォーム"
+      },
+      "field": {
+        "role": "AXTextField",
+        "subrole": null,
+        "title": "会社のメールアドレス",
+        "placeholder": null,
+        "description": null,
+        "help": null,
+        "nearbyTexts": [
+          "会社のメールアドレス"
+        ]
+      }
+    },
+    "id": "case-050"
+  },
+  {
+    "expected": "email.raw",
+    "context": {
+      "application": {
+        "name": "Google Chrome",
+        "bundleId": "com.google.Chrome"
+      },
+      "window": {
+        "title": "取引先情報入力"
+      },
+      "page": {
+        "domain": "example.com",
+        "title": "お申し込みフォーム"
+      },
+      "field": {
+        "role": "AXTextField",
+        "subrole": null,
+        "title": "メールアドレス（確認用）",
+        "placeholder": null,
+        "description": null,
+        "help": null,
+        "nearbyTexts": [
+          "メールアドレス（確認用）"
+        ]
+      }
+    },
+    "id": "case-051"
+  },
+  {
+    "expected": "email_private.raw",
+    "context": {
+      "application": {
+        "name": "Google Chrome",
+        "bundleId": "com.google.Chrome"
+      },
+      "window": {
+        "title": "ご注文手続き"
+      },
+      "page": {
+        "domain": "shop.example.com",
+        "title": "ご注文手続き"
+      },
+      "field": {
+        "role": "AXTextField",
+        "subrole": null,
+        "title": "メールアドレス",
+        "placeholder": null,
+        "description": null,
+        "help": null,
+        "nearbyTexts": [
+          "お届け先",
+          "メールアドレス"
+        ]
+      }
+    },
+    "id": "case-052"
+  },
+  {
+    "expected": "address.raw",
+    "context": {
+      "application": {
+        "name": "Google Chrome",
+        "bundleId": "com.google.Chrome"
+      },
+      "window": {
+        "title": "取引先情報入力"
+      },
+      "page": {
+        "domain": "example.com",
+        "title": "お申し込みフォーム"
+      },
+      "field": {
+        "role": "AXTextField",
+        "subrole": null,
+        "title": "住所",
+        "placeholder": null,
+        "description": null,
+        "help": null,
+        "nearbyTexts": [
+          "住所"
+        ]
+      }
+    },
+    "id": "case-053"
+  },
+  {
+    "expected": "address.raw",
+    "context": {
+      "application": {
+        "name": "Google Chrome",
+        "bundleId": "com.google.Chrome"
+      },
+      "window": {
+        "title": "取引先情報入力"
+      },
+      "page": {
+        "domain": "example.com",
+        "title": "お申し込みフォーム"
+      },
+      "field": {
+        "role": "AXTextField",
+        "subrole": null,
+        "title": "所在地",
+        "placeholder": null,
+        "description": null,
+        "help": null,
+        "nearbyTexts": [
+          "所在地",
+          "本社所在地"
+        ]
+      }
+    },
+    "id": "case-054"
+  },
+  {
+    "expected": "address.pref",
+    "context": {
+      "application": {
+        "name": "Google Chrome",
+        "bundleId": "com.google.Chrome"
+      },
+      "window": {
+        "title": "取引先情報入力"
+      },
+      "page": {
+        "domain": "example.com",
+        "title": "お申し込みフォーム"
+      },
+      "field": {
+        "role": "AXTextField",
+        "subrole": null,
+        "title": "都道府県",
+        "placeholder": null,
+        "description": null,
+        "help": null,
+        "nearbyTexts": [
+          "都道府県"
+        ]
+      }
+    },
+    "id": "case-055"
+  },
+  {
+    "expected": "address.city",
+    "context": {
+      "application": {
+        "name": "Google Chrome",
+        "bundleId": "com.google.Chrome"
+      },
+      "window": {
+        "title": "取引先情報入力"
+      },
+      "page": {
+        "domain": "example.com",
+        "title": "お申し込みフォーム"
+      },
+      "field": {
+        "role": "AXTextField",
+        "subrole": null,
+        "title": "市区町村",
+        "placeholder": null,
+        "description": null,
+        "help": null,
+        "nearbyTexts": [
+          "市区町村"
+        ]
+      }
+    },
+    "id": "case-056"
+  },
+  {
+    "expected": "address.after_city",
+    "context": {
+      "application": {
+        "name": "Google Chrome",
+        "bundleId": "com.google.Chrome"
+      },
+      "window": {
+        "title": "取引先情報入力"
+      },
+      "page": {
+        "domain": "example.com",
+        "title": "お申し込みフォーム"
+      },
+      "field": {
+        "role": "AXTextField",
+        "subrole": null,
+        "title": "番地以降",
+        "placeholder": null,
+        "description": null,
+        "help": null,
+        "nearbyTexts": [
+          "都道府県",
+          "市区町村",
+          "番地以降"
+        ]
+      }
+    },
+    "id": "case-057"
+  },
+  {
+    "expected": "address.after_city",
+    "context": {
+      "application": {
+        "name": "Google Chrome",
+        "bundleId": "com.google.Chrome"
+      },
+      "window": {
+        "title": "取引先情報入力"
+      },
+      "page": {
+        "domain": "example.com",
+        "title": "お申し込みフォーム"
+      },
+      "field": {
+        "role": "AXTextField",
+        "subrole": null,
+        "title": "市区町村以降の住所",
+        "placeholder": null,
+        "description": null,
+        "help": null,
+        "nearbyTexts": [
+          "市区町村以降の住所"
+        ]
+      }
+    },
+    "id": "case-058"
+  },
+  {
+    "expected": "building.raw",
+    "context": {
+      "application": {
+        "name": "Google Chrome",
+        "bundleId": "com.google.Chrome"
+      },
+      "window": {
+        "title": "取引先情報入力"
+      },
+      "page": {
+        "domain": "example.com",
+        "title": "お申し込みフォーム"
+      },
+      "field": {
+        "role": "AXTextField",
+        "subrole": null,
+        "title": "建物名・部屋番号",
+        "placeholder": null,
+        "description": null,
+        "help": null,
+        "nearbyTexts": [
+          "建物名・部屋番号"
+        ]
+      }
+    },
+    "id": "case-059"
+  },
+  {
+    "expected": "building.raw",
+    "context": {
+      "application": {
+        "name": "Google Chrome",
+        "bundleId": "com.google.Chrome"
+      },
+      "window": {
+        "title": "取引先情報入力"
+      },
+      "page": {
+        "domain": "example.com",
+        "title": "お申し込みフォーム"
+      },
+      "field": {
+        "role": "AXTextField",
+        "subrole": null,
+        "title": "ビル名",
+        "placeholder": null,
+        "description": null,
+        "help": null,
+        "nearbyTexts": [
+          "ビル名"
+        ]
+      }
+    },
+    "id": "case-060"
+  },
+  {
+    "expected": "address.full_width",
+    "context": {
+      "application": {
+        "name": "Google Chrome",
+        "bundleId": "com.google.Chrome"
+      },
+      "window": {
+        "title": "取引先情報入力"
+      },
+      "page": {
+        "domain": "example.com",
+        "title": "お申し込みフォーム"
+      },
+      "field": {
+        "role": "AXTextField",
+        "subrole": null,
+        "title": "住所",
+        "placeholder": null,
+        "description": null,
+        "help": null,
+        "nearbyTexts": [
+          "住所",
+          "すべて全角で入力してください"
+        ]
+      }
+    },
+    "id": "case-061"
+  },
+  {
+    "expected": "home_address.raw",
+    "context": {
+      "application": {
+        "name": "Google Chrome",
+        "bundleId": "com.google.Chrome"
+      },
+      "window": {
+        "title": "取引先情報入力"
+      },
+      "page": {
+        "domain": "example.com",
+        "title": "お申し込みフォーム"
+      },
+      "field": {
+        "role": "AXTextField",
+        "subrole": null,
+        "title": "ご自宅の住所",
+        "placeholder": null,
+        "description": null,
+        "help": null,
+        "nearbyTexts": [
+          "ご自宅の住所"
+        ]
+      }
+    },
+    "id": "case-062"
+  },
+  {
+    "expected": "home_zip.raw",
+    "context": {
+      "application": {
+        "name": "Google Chrome",
+        "bundleId": "com.google.Chrome"
+      },
+      "window": {
+        "title": "取引先情報入力"
+      },
+      "page": {
+        "domain": "example.com",
+        "title": "お申し込みフォーム"
+      },
+      "field": {
+        "role": "AXTextField",
+        "subrole": null,
+        "title": "自宅郵便番号",
+        "placeholder": null,
+        "description": null,
+        "help": null,
+        "nearbyTexts": [
+          "自宅郵便番号"
+        ]
+      }
+    },
+    "id": "case-063"
+  },
+  {
+    "expected": "title.raw",
+    "context": {
+      "application": {
+        "name": "Google Chrome",
+        "bundleId": "com.google.Chrome"
+      },
+      "window": {
+        "title": "取引先情報入力"
+      },
+      "page": {
+        "domain": "example.com",
+        "title": "お申し込みフォーム"
+      },
+      "field": {
+        "role": "AXTextField",
+        "subrole": null,
+        "title": "役職",
+        "placeholder": null,
+        "description": null,
+        "help": null,
+        "nearbyTexts": [
+          "役職"
+        ]
+      }
+    },
+    "id": "case-064"
+  },
+  {
+    "expected": "title.raw",
+    "context": {
+      "application": {
+        "name": "Google Chrome",
+        "bundleId": "com.google.Chrome"
+      },
+      "window": {
+        "title": "取引先情報入力"
+      },
+      "page": {
+        "domain": "example.com",
+        "title": "お申し込みフォーム"
+      },
+      "field": {
+        "role": "AXTextField",
+        "subrole": null,
+        "title": "肩書き",
+        "placeholder": null,
+        "description": null,
+        "help": null,
+        "nearbyTexts": [
+          "肩書き"
+        ]
+      }
+    },
+    "id": "case-065"
+  },
+  {
+    "expected": "site.raw",
+    "context": {
+      "application": {
+        "name": "Google Chrome",
+        "bundleId": "com.google.Chrome"
+      },
+      "window": {
+        "title": "取引先情報入力"
+      },
+      "page": {
+        "domain": "example.com",
+        "title": "お申し込みフォーム"
+      },
+      "field": {
+        "role": "AXTextField",
+        "subrole": null,
+        "title": "会社URL",
+        "placeholder": null,
+        "description": null,
+        "help": null,
+        "nearbyTexts": [
+          "会社URL"
+        ]
+      }
+    },
+    "id": "case-066"
+  },
+  {
+    "expected": "site.raw",
+    "context": {
+      "application": {
+        "name": "Google Chrome",
+        "bundleId": "com.google.Chrome"
+      },
+      "window": {
+        "title": "取引先情報入力"
+      },
+      "page": {
+        "domain": "example.com",
+        "title": "お申し込みフォーム"
+      },
+      "field": {
+        "role": "AXTextField",
+        "subrole": null,
+        "title": "ホームページ",
+        "placeholder": null,
+        "description": null,
+        "help": null,
+        "nearbyTexts": [
+          "ホームページ"
+        ]
+      }
+    },
+    "id": "case-067"
+  },
+  {
+    "expected": "corp_number.raw",
+    "context": {
+      "application": {
+        "name": "Google Chrome",
+        "bundleId": "com.google.Chrome"
+      },
+      "window": {
+        "title": "取引先情報入力"
+      },
+      "page": {
+        "domain": "example.com",
+        "title": "お申し込みフォーム"
+      },
+      "field": {
+        "role": "AXTextField",
+        "subrole": null,
+        "title": "法人番号",
+        "placeholder": null,
+        "description": null,
+        "help": null,
+        "nearbyTexts": [
+          "法人番号"
+        ]
+      }
+    },
+    "id": "case-068"
+  },
+  {
+    "expected": "corp_number.raw",
+    "context": {
+      "application": {
+        "name": "Google Chrome",
+        "bundleId": "com.google.Chrome"
+      },
+      "window": {
+        "title": "取引先情報入力"
+      },
+      "page": {
+        "domain": "example.com",
+        "title": "お申し込みフォーム"
+      },
+      "field": {
+        "role": "AXTextField",
+        "subrole": null,
+        "title": "法人番号（13桁）",
+        "placeholder": null,
+        "description": null,
+        "help": null,
+        "nearbyTexts": [
+          "法人番号（13桁）"
+        ]
+      }
+    },
+    "id": "case-069"
+  },
+  {
+    "expected": "invoice.raw",
+    "context": {
+      "application": {
+        "name": "Google Chrome",
+        "bundleId": "com.google.Chrome"
+      },
+      "window": {
+        "title": "取引先情報入力"
+      },
+      "page": {
+        "domain": "example.com",
+        "title": "お申し込みフォーム"
+      },
+      "field": {
+        "role": "AXTextField",
+        "subrole": null,
+        "title": "適格請求書発行事業者登録番号",
+        "placeholder": null,
+        "description": null,
+        "help": null,
+        "nearbyTexts": [
+          "適格請求書発行事業者登録番号"
+        ]
+      }
+    },
+    "id": "case-070"
+  },
+  {
+    "expected": "invoice.raw",
+    "context": {
+      "application": {
+        "name": "Google Chrome",
+        "bundleId": "com.google.Chrome"
+      },
+      "window": {
+        "title": "取引先情報入力"
+      },
+      "page": {
+        "domain": "example.com",
+        "title": "お申し込みフォーム"
+      },
+      "field": {
+        "role": "AXTextField",
+        "subrole": null,
+        "title": "インボイス番号",
+        "placeholder": null,
+        "description": null,
+        "help": null,
+        "nearbyTexts": [
+          "インボイス番号"
+        ]
+      }
+    },
+    "id": "case-071"
+  },
+  {
+    "expected": "__none__",
+    "context": {
+      "application": {
+        "name": "Google Chrome",
+        "bundleId": "com.google.Chrome"
+      },
+      "window": {
+        "title": "取引先情報入力"
+      },
+      "page": {
+        "domain": "example.com",
+        "title": "お問い合わせ"
+      },
+      "field": {
+        "role": "AXTextArea",
+        "subrole": null,
+        "title": "お問い合わせ内容",
+        "placeholder": null,
+        "description": null,
+        "help": null,
+        "nearbyTexts": [
+          "お問い合わせ内容"
+        ]
+      }
+    },
+    "id": "case-072"
+  },
+  {
+    "expected": "__none__",
+    "context": {
+      "application": {
+        "name": "Google Chrome",
+        "bundleId": "com.google.Chrome"
+      },
+      "window": {
+        "title": "取引先情報入力"
+      },
+      "page": {
+        "domain": "example.com",
+        "title": "カート"
+      },
+      "field": {
+        "role": "AXTextField",
+        "subrole": null,
+        "title": "クーポンコード",
+        "placeholder": null,
+        "description": null,
+        "help": null,
+        "nearbyTexts": [
+          "クーポンコード"
+        ]
+      }
+    },
+    "id": "case-073"
+  },
+  {
+    "expected": "__none__",
+    "context": {
+      "application": {
+        "name": "Google Chrome",
+        "bundleId": "com.google.Chrome"
+      },
+      "window": {
+        "title": "取引先情報入力"
+      },
+      "page": {
+        "domain": "example.com",
+        "title": "お申し込みフォーム"
+      },
+      "field": {
+        "role": "AXTextField",
+        "subrole": null,
+        "title": "ご希望の配送日",
+        "placeholder": null,
+        "description": null,
+        "help": null,
+        "nearbyTexts": [
+          "ご希望の配送日"
+        ]
+      }
+    },
+    "id": "case-074"
+  },
+  {
+    "expected": "name.family",
+    "context": {
+      "application": {
+        "name": "Google Chrome",
+        "bundleId": "com.google.Chrome"
+      },
+      "window": {
+        "title": "取引先情報入力"
+      },
+      "page": {
+        "domain": "example.com",
+        "title": "お申し込みフォーム"
+      },
+      "field": {
+        "role": "AXTextField",
+        "subrole": null,
+        "title": "姓",
+        "placeholder": null,
+        "description": null,
+        "help": null,
+        "nearbyTexts": [
+          "姓"
+        ]
+      }
+    },
+    "id": "case-075"
+  },
+  {
+    "expected": "name.given",
+    "context": {
+      "application": {
+        "name": "Google Chrome",
+        "bundleId": "com.google.Chrome"
+      },
+      "window": {
+        "title": "取引先情報入力"
+      },
+      "page": {
+        "domain": "example.com",
+        "title": "お申し込みフォーム"
+      },
+      "field": {
+        "role": "AXTextField",
+        "subrole": null,
+        "title": "名",
+        "placeholder": null,
+        "description": null,
+        "help": null,
+        "nearbyTexts": [
+          "名"
+        ]
+      }
+    },
+    "id": "case-076"
+  },
+  {
+    "expected": "name.family",
+    "context": {
+      "application": {
+        "name": "Google Chrome",
+        "bundleId": "com.google.Chrome"
+      },
+      "window": {
+        "title": "取引先情報入力"
+      },
+      "page": {
+        "domain": "example.com",
+        "title": "お申し込みフォーム"
+      },
+      "field": {
+        "role": "AXTextField",
+        "subrole": null,
+        "title": "お名前",
+        "placeholder": "姓",
+        "description": null,
+        "help": null,
+        "nearbyTexts": [
+          "お名前"
+        ],
+        "siblingIndex": 1,
+        "siblingCount": 2
+      }
+    },
+    "id": "case-077"
+  },
+  {
+    "expected": "name.given",
+    "context": {
+      "application": {
+        "name": "Google Chrome",
+        "bundleId": "com.google.Chrome"
+      },
+      "window": {
+        "title": "取引先情報入力"
+      },
+      "page": {
+        "domain": "example.com",
+        "title": "お申し込みフォーム"
+      },
+      "field": {
+        "role": "AXTextField",
+        "subrole": null,
+        "title": "お名前",
+        "placeholder": "名",
+        "description": null,
+        "help": null,
+        "nearbyTexts": [
+          "お名前"
+        ],
+        "siblingIndex": 2,
+        "siblingCount": 2
+      }
+    },
+    "id": "case-078"
+  },
+  {
+    "expected": "name_kana.family",
+    "context": {
+      "application": {
+        "name": "Google Chrome",
+        "bundleId": "com.google.Chrome"
+      },
+      "window": {
+        "title": "取引先情報入力"
+      },
+      "page": {
+        "domain": "example.com",
+        "title": "お申し込みフォーム"
+      },
+      "field": {
+        "role": "AXTextField",
+        "subrole": null,
+        "title": "セイ",
+        "placeholder": null,
+        "description": null,
+        "help": null,
+        "nearbyTexts": [
+          "セイ"
+        ]
+      }
+    },
+    "id": "case-079"
+  },
+  {
+    "expected": "name_kana.given",
+    "context": {
+      "application": {
+        "name": "Google Chrome",
+        "bundleId": "com.google.Chrome"
+      },
+      "window": {
+        "title": "取引先情報入力"
+      },
+      "page": {
+        "domain": "example.com",
+        "title": "お申し込みフォーム"
+      },
+      "field": {
+        "role": "AXTextField",
+        "subrole": null,
+        "title": "メイ",
+        "placeholder": null,
+        "description": null,
+        "help": null,
+        "nearbyTexts": [
+          "メイ"
+        ]
+      }
+    },
+    "id": "case-080"
+  },
+  {
+    "expected": "name_kana.family",
+    "context": {
+      "application": {
+        "name": "Google Chrome",
+        "bundleId": "com.google.Chrome"
+      },
+      "window": {
+        "title": "取引先情報入力"
+      },
+      "page": {
+        "domain": "example.com",
+        "title": "お申し込みフォーム"
+      },
+      "field": {
+        "role": "AXTextField",
+        "subrole": null,
+        "title": "フリガナ",
+        "placeholder": "セイ",
+        "description": null,
+        "help": null,
+        "nearbyTexts": [
+          "フリガナ"
+        ],
+        "siblingIndex": 1,
+        "siblingCount": 2
+      }
+    },
+    "id": "case-081"
+  },
+  {
+    "expected": "name_roman.roman_given",
+    "context": {
+      "application": {
+        "name": "Google Chrome",
+        "bundleId": "com.google.Chrome"
+      },
+      "window": {
+        "title": "Sign up"
+      },
+      "page": {
+        "domain": "example.com",
+        "title": "Sign up"
+      },
+      "field": {
+        "role": "AXTextField",
+        "subrole": null,
+        "title": "First name",
+        "placeholder": null,
+        "description": null,
+        "help": null,
+        "nearbyTexts": [
+          "First name"
+        ]
+      }
+    },
+    "id": "case-082"
+  },
+  {
+    "expected": "name_roman.roman_family",
+    "context": {
+      "application": {
+        "name": "Google Chrome",
+        "bundleId": "com.google.Chrome"
+      },
+      "window": {
+        "title": "Sign up"
+      },
+      "page": {
+        "domain": "example.com",
+        "title": "Sign up"
+      },
+      "field": {
+        "role": "AXTextField",
+        "subrole": null,
+        "title": "Last name",
+        "placeholder": null,
+        "description": null,
+        "help": null,
+        "nearbyTexts": [
+          "Last name"
+        ]
+      }
+    },
+    "id": "case-083"
+  },
+  {
+    "expected": "email.email_local",
+    "context": {
+      "application": {
+        "name": "Google Chrome",
+        "bundleId": "com.google.Chrome"
+      },
+      "window": {
+        "title": "取引先情報入力"
+      },
+      "page": {
+        "domain": "example.com",
+        "title": "お申し込みフォーム"
+      },
+      "field": {
+        "role": "AXTextField",
+        "subrole": null,
+        "title": "メールアドレス",
+        "placeholder": null,
+        "description": null,
+        "help": null,
+        "nearbyTexts": [
+          "メールアドレス",
+          "@"
+        ],
+        "siblingIndex": 1,
+        "siblingCount": 2
+      }
+    },
+    "id": "case-084"
+  },
+  {
+    "expected": "email.email_domain",
+    "context": {
+      "application": {
+        "name": "Google Chrome",
+        "bundleId": "com.google.Chrome"
+      },
+      "window": {
+        "title": "取引先情報入力"
+      },
+      "page": {
+        "domain": "example.com",
+        "title": "お申し込みフォーム"
+      },
+      "field": {
+        "role": "AXTextField",
+        "subrole": null,
+        "title": "メールアドレス",
+        "placeholder": null,
+        "description": null,
+        "help": null,
+        "nearbyTexts": [
+          "メールアドレス",
+          "@"
+        ],
+        "siblingIndex": 2,
+        "siblingCount": 2
+      }
+    },
+    "id": "case-085"
+  },
+  {
+    "expected": "site.no_scheme",
+    "context": {
+      "application": {
+        "name": "Google Chrome",
+        "bundleId": "com.google.Chrome"
+      },
+      "window": {
+        "title": "取引先情報入力"
+      },
+      "page": {
+        "domain": "example.com",
+        "title": "お申し込みフォーム"
+      },
+      "field": {
+        "role": "AXTextField",
+        "subrole": null,
+        "title": "URL",
+        "placeholder": null,
+        "description": null,
+        "help": null,
+        "nearbyTexts": [
+          "URL",
+          "https://"
+        ]
+      }
+    },
+    "id": "case-086"
+  },
+  {
+    "expected": "birth.raw",
+    "context": {
+      "application": {
+        "name": "Google Chrome",
+        "bundleId": "com.google.Chrome"
+      },
+      "window": {
+        "title": "取引先情報入力"
+      },
+      "page": {
+        "domain": "example.com",
+        "title": "お申し込みフォーム"
+      },
+      "field": {
+        "role": "AXTextField",
+        "subrole": null,
+        "title": "生年月日",
+        "placeholder": null,
+        "description": null,
+        "help": null,
+        "nearbyTexts": [
+          "生年月日"
+        ]
+      }
+    },
+    "id": "case-087"
+  },
+  {
+    "expected": "birth.year",
+    "context": {
+      "application": {
+        "name": "Google Chrome",
+        "bundleId": "com.google.Chrome"
+      },
+      "window": {
+        "title": "取引先情報入力"
+      },
+      "page": {
+        "domain": "example.com",
+        "title": "お申し込みフォーム"
+      },
+      "field": {
+        "role": "AXTextField",
+        "subrole": null,
+        "title": "生年月日",
+        "placeholder": null,
+        "description": null,
+        "help": null,
+        "nearbyTexts": [
+          "生年月日",
+          "年",
+          "月",
+          "日"
+        ],
+        "siblingIndex": 1,
+        "siblingCount": 3
+      }
+    },
+    "id": "case-088"
+  },
+  {
+    "expected": "birth.month",
+    "context": {
+      "application": {
+        "name": "Google Chrome",
+        "bundleId": "com.google.Chrome"
+      },
+      "window": {
+        "title": "取引先情報入力"
+      },
+      "page": {
+        "domain": "example.com",
+        "title": "お申し込みフォーム"
+      },
+      "field": {
+        "role": "AXTextField",
+        "subrole": null,
+        "title": "生年月日",
+        "placeholder": null,
+        "description": null,
+        "help": null,
+        "nearbyTexts": [
+          "生年月日",
+          "年",
+          "月",
+          "日"
+        ],
+        "siblingIndex": 2,
+        "siblingCount": 3
+      }
+    },
+    "id": "case-089"
+  },
+  {
+    "expected": "birth.day",
+    "context": {
+      "application": {
+        "name": "Google Chrome",
+        "bundleId": "com.google.Chrome"
+      },
+      "window": {
+        "title": "取引先情報入力"
+      },
+      "page": {
+        "domain": "example.com",
+        "title": "お申し込みフォーム"
+      },
+      "field": {
+        "role": "AXTextField",
+        "subrole": null,
+        "title": "生年月日",
+        "placeholder": null,
+        "description": null,
+        "help": null,
+        "nearbyTexts": [
+          "生年月日",
+          "年",
+          "月",
+          "日"
+        ],
+        "siblingIndex": 3,
+        "siblingCount": 3
+      }
+    },
+    "id": "case-090"
+  },
+  {
+    "expected": "birth.date_compact",
+    "context": {
+      "application": {
+        "name": "Google Chrome",
+        "bundleId": "com.google.Chrome"
+      },
+      "window": {
+        "title": "取引先情報入力"
+      },
+      "page": {
+        "domain": "example.com",
+        "title": "お申し込みフォーム"
+      },
+      "field": {
+        "role": "AXTextField",
+        "subrole": null,
+        "title": "生年月日",
+        "placeholder": "19900131",
+        "description": null,
+        "help": null,
+        "nearbyTexts": [
+          "生年月日",
+          "半角数字8桁"
+        ]
+      }
+    },
+    "id": "case-091"
+  },
+  {
+    "expected": "__none__",
+    "context": {
+      "application": {
+        "name": "Google Chrome",
+        "bundleId": "com.google.Chrome"
+      },
+      "window": {
+        "title": "取引先情報入力"
+      },
+      "page": {
+        "domain": "example.com",
+        "title": "お申し込みフォーム"
+      },
+      "field": {
+        "role": "AXTextField",
+        "subrole": null,
+        "title": "設立年月日",
+        "placeholder": null,
+        "description": null,
+        "help": null,
+        "nearbyTexts": [
+          "設立年月日"
+        ]
+      }
+    },
+    "id": "case-092"
+  },
+  {
+    "expected": "card.raw",
+    "context": {
+      "application": {
+        "name": "Google Chrome",
+        "bundleId": "com.google.Chrome"
+      },
+      "window": {
+        "title": "取引先情報入力"
+      },
+      "page": {
+        "domain": "example.com",
+        "title": "お支払い"
+      },
+      "field": {
+        "role": "AXTextField",
+        "subrole": null,
+        "title": "クレジットカード番号",
+        "placeholder": null,
+        "description": null,
+        "help": null,
+        "nearbyTexts": [
+          "クレジットカード番号"
+        ]
+      }
+    },
+    "id": "case-093"
+  },
+  {
+    "expected": "card.raw",
+    "context": {
+      "application": {
+        "name": "Google Chrome",
+        "bundleId": "com.google.Chrome"
+      },
+      "window": {
+        "title": "取引先情報入力"
+      },
+      "page": {
+        "domain": "example.com",
+        "title": "お支払い"
+      },
+      "field": {
+        "role": "AXTextField",
+        "subrole": null,
+        "title": "カード番号",
+        "placeholder": null,
+        "description": null,
+        "help": null,
+        "nearbyTexts": [
+          "カード番号"
+        ]
+      }
+    },
+    "id": "case-094"
+  },
+  {
+    "expected": "card.raw",
+    "context": {
+      "application": {
+        "name": "Google Chrome",
+        "bundleId": "com.google.Chrome"
+      },
+      "window": {
+        "title": "Checkout"
+      },
+      "page": {
+        "domain": "example.com",
+        "title": "Checkout"
+      },
+      "field": {
+        "role": "AXTextField",
+        "subrole": null,
+        "title": "Card number",
+        "placeholder": null,
+        "description": null,
+        "help": null,
+        "nearbyTexts": [
+          "Card number"
+        ]
+      }
+    },
+    "id": "case-095"
+  },
+  {
+    "expected": "card.no_space",
+    "context": {
+      "application": {
+        "name": "Google Chrome",
+        "bundleId": "com.google.Chrome"
+      },
+      "window": {
+        "title": "取引先情報入力"
+      },
+      "page": {
+        "domain": "example.com",
+        "title": "お支払い"
+      },
+      "field": {
+        "role": "AXTextField",
+        "subrole": null,
+        "title": "カード番号",
+        "placeholder": "ハイフン・スペースなし",
+        "description": null,
+        "help": null,
+        "nearbyTexts": [
+          "カード番号"
+        ]
+      }
+    },
+    "id": "case-096"
+  },
+  {
+    "expected": "card.card_part1",
+    "context": {
+      "application": {
+        "name": "Google Chrome",
+        "bundleId": "com.google.Chrome"
+      },
+      "window": {
+        "title": "取引先情報入力"
+      },
+      "page": {
+        "domain": "example.com",
+        "title": "お支払い"
+      },
+      "field": {
+        "role": "AXTextField",
+        "subrole": null,
+        "title": "カード番号",
+        "placeholder": null,
+        "description": null,
+        "help": null,
+        "nearbyTexts": [
+          "カード番号",
+          "-",
+          "-",
+          "-"
+        ],
+        "siblingIndex": 1,
+        "siblingCount": 4
+      }
+    },
+    "id": "case-097"
+  },
+  {
+    "expected": "card.card_part3",
+    "context": {
+      "application": {
+        "name": "Google Chrome",
+        "bundleId": "com.google.Chrome"
+      },
+      "window": {
+        "title": "取引先情報入力"
+      },
+      "page": {
+        "domain": "example.com",
+        "title": "お支払い"
+      },
+      "field": {
+        "role": "AXTextField",
+        "subrole": null,
+        "title": "カード番号",
+        "placeholder": null,
+        "description": null,
+        "help": null,
+        "nearbyTexts": [
+          "カード番号",
+          "-",
+          "-",
+          "-"
+        ],
+        "siblingIndex": 3,
+        "siblingCount": 4
+      }
+    },
+    "id": "case-098"
+  },
+  {
+    "expected": "card_name.raw",
+    "context": {
+      "application": {
+        "name": "Google Chrome",
+        "bundleId": "com.google.Chrome"
+      },
+      "window": {
+        "title": "取引先情報入力"
+      },
+      "page": {
+        "domain": "example.com",
+        "title": "お支払い"
+      },
+      "field": {
+        "role": "AXTextField",
+        "subrole": null,
+        "title": "カード名義",
+        "placeholder": null,
+        "description": null,
+        "help": null,
+        "nearbyTexts": [
+          "カード名義"
+        ]
+      }
+    },
+    "id": "case-099"
+  },
+  {
+    "expected": "card_name.raw",
+    "context": {
+      "application": {
+        "name": "Google Chrome",
+        "bundleId": "com.google.Chrome"
+      },
+      "window": {
+        "title": "取引先情報入力"
+      },
+      "page": {
+        "domain": "example.com",
+        "title": "お支払い"
+      },
+      "field": {
+        "role": "AXTextField",
+        "subrole": null,
+        "title": "カード名義人",
+        "placeholder": null,
+        "description": null,
+        "help": null,
+        "nearbyTexts": [
+          "カード名義人"
+        ]
+      }
+    },
+    "id": "case-100"
+  },
+  {
+    "expected": "card_name.raw",
+    "context": {
+      "application": {
+        "name": "Google Chrome",
+        "bundleId": "com.google.Chrome"
+      },
+      "window": {
+        "title": "Checkout"
+      },
+      "page": {
+        "domain": "example.com",
+        "title": "Checkout"
+      },
+      "field": {
+        "role": "AXTextField",
+        "subrole": null,
+        "title": "Name on card",
+        "placeholder": null,
+        "description": null,
+        "help": null,
+        "nearbyTexts": [
+          "Name on card"
+        ]
+      }
+    },
+    "id": "case-101"
+  },
+  {
+    "expected": "card_exp.raw",
+    "context": {
+      "application": {
+        "name": "Google Chrome",
+        "bundleId": "com.google.Chrome"
+      },
+      "window": {
+        "title": "取引先情報入力"
+      },
+      "page": {
+        "domain": "example.com",
+        "title": "お支払い"
+      },
+      "field": {
+        "role": "AXTextField",
+        "subrole": null,
+        "title": "有効期限",
+        "placeholder": "MM/YY",
+        "description": null,
+        "help": null,
+        "nearbyTexts": [
+          "有効期限"
+        ]
+      }
+    },
+    "id": "case-102"
+  },
+  {
+    "expected": "card_exp.exp_long",
+    "context": {
+      "application": {
+        "name": "Google Chrome",
+        "bundleId": "com.google.Chrome"
+      },
+      "window": {
+        "title": "取引先情報入力"
+      },
+      "page": {
+        "domain": "example.com",
+        "title": "お支払い"
+      },
+      "field": {
+        "role": "AXTextField",
+        "subrole": null,
+        "title": "有効期限",
+        "placeholder": "MM/YYYY",
+        "description": null,
+        "help": null,
+        "nearbyTexts": [
+          "有効期限"
+        ]
+      }
+    },
+    "id": "case-103"
+  },
+  {
+    "expected": "card_exp.exp_month",
+    "context": {
+      "application": {
+        "name": "Google Chrome",
+        "bundleId": "com.google.Chrome"
+      },
+      "window": {
+        "title": "取引先情報入力"
+      },
+      "page": {
+        "domain": "example.com",
+        "title": "お支払い"
+      },
+      "field": {
+        "role": "AXTextField",
+        "subrole": null,
+        "title": "有効期限",
+        "placeholder": null,
+        "description": null,
+        "help": null,
+        "nearbyTexts": [
+          "有効期限",
+          "月",
+          "年"
+        ],
+        "siblingIndex": 1,
+        "siblingCount": 2
+      }
+    },
+    "id": "case-104"
+  },
+  {
+    "expected": "card_exp.exp_year2",
+    "context": {
+      "application": {
+        "name": "Google Chrome",
+        "bundleId": "com.google.Chrome"
+      },
+      "window": {
+        "title": "取引先情報入力"
+      },
+      "page": {
+        "domain": "example.com",
+        "title": "お支払い"
+      },
+      "field": {
+        "role": "AXTextField",
+        "subrole": null,
+        "title": "有効期限",
+        "placeholder": "YY",
+        "description": null,
+        "help": null,
+        "nearbyTexts": [
+          "有効期限",
+          "月",
+          "年"
+        ],
+        "siblingIndex": 2,
+        "siblingCount": 2
+      }
+    },
+    "id": "case-105"
+  },
+  {
+    "expected": "card2.raw",
+    "context": {
+      "application": {
+        "name": "Google Chrome",
+        "bundleId": "com.google.Chrome"
+      },
+      "window": {
+        "title": "取引先情報入力"
+      },
+      "page": {
+        "domain": "example.com",
+        "title": "お支払い"
+      },
+      "field": {
+        "role": "AXTextField",
+        "subrole": null,
+        "title": "カード番号",
+        "placeholder": null,
+        "description": null,
+        "help": null,
+        "nearbyTexts": [
+          "法人カードでお支払い",
+          "カード番号"
+        ]
+      }
+    },
+    "id": "case-106"
+  },
+  {
+    "expected": "card2_exp.raw",
+    "context": {
+      "application": {
+        "name": "Google Chrome",
+        "bundleId": "com.google.Chrome"
+      },
+      "window": {
+        "title": "取引先情報入力"
+      },
+      "page": {
+        "domain": "example.com",
+        "title": "法人カード情報の登録"
+      },
+      "field": {
+        "role": "AXTextField",
+        "subrole": null,
+        "title": "有効期限",
+        "placeholder": "MM/YY",
+        "description": null,
+        "help": null,
+        "nearbyTexts": [
+          "有効期限"
+        ]
+      }
+    },
+    "id": "case-107"
+  },
+  {
+    "expected": "ship.raw",
+    "context": {
+      "application": {
+        "name": "Google Chrome",
+        "bundleId": "com.google.Chrome"
+      },
+      "window": {
+        "title": "取引先情報入力"
+      },
+      "page": {
+        "domain": "example.com",
+        "title": "ご注文手続き"
+      },
+      "field": {
+        "role": "AXTextField",
+        "subrole": null,
+        "title": "お届け先住所",
+        "placeholder": null,
+        "description": null,
+        "help": null,
+        "nearbyTexts": [
+          "お届け先住所"
+        ]
+      }
+    },
+    "id": "case-108"
+  },
+  {
+    "expected": "ship.raw",
+    "context": {
+      "application": {
+        "name": "Google Chrome",
+        "bundleId": "com.google.Chrome"
+      },
+      "window": {
+        "title": "取引先情報入力"
+      },
+      "page": {
+        "domain": "example.com",
+        "title": "ご注文手続き"
+      },
+      "field": {
+        "role": "AXTextField",
+        "subrole": null,
+        "title": "配送先住所",
+        "placeholder": null,
+        "description": null,
+        "help": null,
+        "nearbyTexts": [
+          "配送先住所"
+        ]
+      }
+    },
+    "id": "case-109"
+  },
+  {
+    "expected": "ship2.raw",
+    "context": {
+      "application": {
+        "name": "Google Chrome",
+        "bundleId": "com.google.Chrome"
+      },
+      "window": {
+        "title": "取引先情報入力"
+      },
+      "page": {
+        "domain": "example.com",
+        "title": "納品先の登録"
+      },
+      "field": {
+        "role": "AXTextField",
+        "subrole": null,
+        "title": "倉庫の住所",
+        "placeholder": null,
+        "description": null,
+        "help": null,
+        "nearbyTexts": [
+          "倉庫の住所"
+        ]
+      }
+    },
+    "id": "case-110"
+  },
+  {
+    "expected": "ship2.raw",
+    "context": {
+      "application": {
+        "name": "Google Chrome",
+        "bundleId": "com.google.Chrome"
+      },
+      "window": {
+        "title": "取引先情報入力"
+      },
+      "page": {
+        "domain": "example.com",
+        "title": "納品先の登録"
+      },
+      "field": {
+        "role": "AXTextField",
+        "subrole": null,
+        "title": "納品先住所",
+        "placeholder": null,
+        "description": null,
+        "help": null,
+        "nearbyTexts": [
+          "納品先（倉庫）",
+          "住所"
+        ]
+      }
+    },
+    "id": "case-111"
+  },
+  {
+    "expected": "card_cvc.raw",
+    "context": {
+      "application": {
+        "name": "Google Chrome",
+        "bundleId": "com.google.Chrome"
+      },
+      "window": {
+        "title": "取引先情報入力"
+      },
+      "page": {
+        "domain": "example.com",
+        "title": "お支払い"
+      },
+      "field": {
+        "role": "AXTextField",
+        "subrole": null,
+        "title": "セキュリティコード",
+        "placeholder": null,
+        "description": null,
+        "help": null,
+        "nearbyTexts": [
+          "セキュリティコード"
+        ]
+      }
+    },
+    "id": "case-112"
+  },
+  {
+    "expected": "card_cvc.raw",
+    "context": {
+      "application": {
+        "name": "Google Chrome",
+        "bundleId": "com.google.Chrome"
+      },
+      "window": {
+        "title": "Checkout"
+      },
+      "page": {
+        "domain": "example.com",
+        "title": "Checkout"
+      },
+      "field": {
+        "role": "AXTextField",
+        "subrole": null,
+        "title": "CVC",
+        "placeholder": null,
+        "description": null,
+        "help": null,
+        "nearbyTexts": [
+          "CVC"
+        ]
+      }
+    },
+    "id": "case-113"
+  },
+  {
+    "expected": "__none__",
+    "context": {
+      "application": {
+        "name": "Google Chrome",
+        "bundleId": "com.google.Chrome"
+      },
+      "window": {
+        "title": "検索"
+      },
+      "page": {
+        "domain": "example.com",
+        "title": "検索結果"
+      },
+      "field": {
+        "role": "AXTextField",
+        "subrole": null,
+        "title": "検索",
+        "placeholder": null,
+        "description": null,
+        "help": null,
+        "nearbyTexts": [
+          "検索"
+        ]
+      }
+    },
+    "id": "case-114"
+  },
+  {
+    "expected": "__none__",
+    "context": {
+      "application": {
+        "name": "メール",
+        "bundleId": "com.apple.mail"
+      },
+      "window": {
+        "title": "新規メッセージ"
+      },
+      "page": null,
+      "field": {
+        "role": "AXTextField",
+        "subrole": null,
+        "title": "宛先",
+        "placeholder": null,
+        "description": null,
+        "help": null,
+        "nearbyTexts": [
+          "宛先"
+        ]
+      }
+    },
+    "id": "case-115"
+  }
+]

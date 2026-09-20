@@ -1,0 +1,19 @@
+# Swift / SPM
+macos/.build/
+macos/build/
+macos/.swiftpm/
+*.dSYM/
+
+# Node / Vercel
+relay/node_modules/
+relay/.vercel/
+relay/.env
+relay/.env.local
+relay/.env*.local
+
+# 評価: 問い合わせは build-fixtures.py で再生成でき、結果は実行ごとに変わる
+eval/requests.json
+eval/results.json
+
+.DS_Store
+*.bak
