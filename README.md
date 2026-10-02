@@ -52,6 +52,9 @@ The model never generates or edits text. All transformations are deterministic l
 
 ## Getting started
 
+> **Cost:** Jev requires paid AI Gateway credits (from $1); it is no longer on the free tier.
+> A fill costs about $0.00015, so $1 lasts a few thousand fills.
+
 Requires macOS 14+. Xcode is **not** required — the Command Line Tools are enough.
 
 ```bash
@@ -81,8 +84,10 @@ The question sent to the model is built inside the app, so every route gives the
 | **Your own relay** | Deploy [`relay/`](relay/) to Vercel | Keeps the API key off the device; share one deployment across a team. ~0.3 s slower. |
 | **TypeSafe AI (direct)** | A TypeSafe API key | Implemented from public information; **not verified** against the live API. |
 
-AI Gateway requires a card on file even for the free monthly credit, and the free tier is rate-limited. Jev costs about
-$0.04 per million input tokens; one fill is roughly 2–3k tokens.
+**Jev is not available on the AI Gateway free tier** (as of October 2026 — it was free under a promotion that ended on
+2026-09-25). You need to buy AI Gateway credits, from $1. At $0.042 per million input tokens and ~3–4k tokens per fill,
+that is roughly **$0.00015 per fill** — $1 covers several thousand fills. Note that buying credits moves the account to
+the paid tier, which ends the monthly free credit.
 
 <details>
 <summary>Deploying the relay</summary>

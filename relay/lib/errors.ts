@@ -13,7 +13,8 @@ export function statusFor(error: unknown): { status: number; message: string } {
   }
   if (/timeout|abort/i.test(message)) return { status: 504, message }
   // 課金・クレジット関連は再試行しても直らない。
-  if (statusCode === 402 || /credit card|credits|billing|payment/i.test(message)) {
+  // 課金まわりは 402 に寄せる。403 のまま返すとアプリ側で「トークンが違う」と誤案内になる。
+  if (statusCode === 402 || /free tier|credit card|credits|billing|payment/i.test(message)) {
     return { status: 402, message }
   }
   return { status: 502, message }

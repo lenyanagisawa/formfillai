@@ -9,6 +9,7 @@ public final class ClassifierClient: @unchecked Sendable {
         case notConfigured(JevConnection)
         case unauthorized
         case billingRequired(String?)
+        case freeTierBlocked
         case rateLimited
         case badStatus(Int, String?)
         case timedOut
@@ -21,6 +22,11 @@ public final class ClassifierClient: @unchecked Sendable {
                 return "接続先（\(connection.title)）が設定されていません。設定タブで入力してください。"
             case .unauthorized:
                 return "API キーまたはトークンが正しくありません。設定を確認してください。"
+            case .freeTierBlocked:
+                return """
+                    Jev は無料枠では使えなくなりました。AI Gateway でクレジットを購入すると使えます（$1 から・1回あたり約0.02円）。
+                    Vercel のダッシュボード → AI Gateway → Credits
+                    """
             case .billingRequired(let detail):
                 return detail ?? "AI Gateway の課金設定が必要です。Vercel のダッシュボードを確認してください。"
             case .rateLimited:
@@ -110,19 +116,26 @@ public final class ClassifierClient: @unchecked Sendable {
         guard let http = response as? HTTPURLResponse else {
             throw ClassifierError.transport("不正なレスポンス")
         }
+        guard !(200..<300).contains(http.statusCode) else { return }
         let message = errorMessage(from: data)
+
+        // 課金まわりの問題は、経路によって 403 だったり 402 だったりする。
+        // ステータスより先に本文で判断しないと「キーが違う」と誤って案内してしまう。
+        if let message {
+            if message.range(of: "free tier", options: .caseInsensitive) != nil {
+                throw ClassifierError.freeTierBlocked
+            }
+            if message.range(of: "credit card|credits|billing|payment", options: [.regularExpression, .caseInsensitive]) != nil {
+                throw ClassifierError.billingRequired(message)
+            }
+        }
+
         switch http.statusCode {
-        case 200..<300: return
         case 401, 403: throw ClassifierError.unauthorized
         case 402: throw ClassifierError.billingRequired(message)
         case 429: throw ClassifierError.rateLimited
         case 504: throw ClassifierError.timedOut
-        default:
-            // AI Gateway は課金まわりの問題を 4xx の本文で伝えてくることがある。
-            if let message, message.range(of: "credit card|credits|billing", options: [.regularExpression, .caseInsensitive]) != nil {
-                throw ClassifierError.billingRequired(message)
-            }
-            throw ClassifierError.badStatus(http.statusCode, message)
+        default: throw ClassifierError.badStatus(http.statusCode, message)
         }
     }
 
