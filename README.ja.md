@@ -79,7 +79,7 @@ open build/FormFillAI.app
 
 | 経路 | 必要なもの | 補足 |
 | --- | --- | --- |
-| **Cloudflare Clef** — 無料枠あり | Cloudflare のアカウント ID と Workers AI 権限の API トークン | Cloudflare 自身の判断モデル [Clef](https://developers.cloudflare.com/ai/models/@cf/cloudflare/clef-flash/) を使います。Jev と同じ契約です。1 日 10,000 ニューロンの無料枠の対象で、1 回あたり約 30 ニューロン（1 日 300 回ほど）まで無料です。 |
+| **Cloudflare Clef** — 無料枠あり | Cloudflare のアカウント ID と Workers AI 権限の API トークン | Cloudflare 自身の判断モデル [Clef](https://developers.cloudflare.com/ai/models/@cf/cloudflare/clef/) を使います。Jev と同じ契約で、カード登録も不要です。1 日 10,000 ニューロンの無料枠の対象で、1 回あたり約 80 ニューロン（**1 日 125 回ほど**）。精度は Jev より低く、実測 **88%**（Jev は 97%）です。 |
 | **Vercel AI Gateway（直接）** | [AI Gateway の API キー](https://vercel.com/docs/ai-gateway) と有料クレジット | Jev を使います。サーバー不要。公式 SDK が内部で使っているエンドポイントで、公開ドキュメントには無く、変わる可能性があります。 |
 | **自前の中継サーバー** | [`relay/`](relay/) を Vercel にデプロイ | API キーを端末に置かずに済み、チームで共有できます。0.3 秒ほど遅くなります。 |
 | **TypeSafe AI（直接）** | TypeSafe の API キー | 公開情報をもとに実装しており、**実際の疎通は未確認**です。 |
@@ -108,10 +108,16 @@ npx vercel deploy --prod
 
 ## 精度
 
-115 ケース・候補 約 105 個（`eval/`）、「常に自動入力」モードでの実測:
+115 ケース・候補 約 105 個（`eval/`）、「常に自動入力」モードでの実測。外れは **違う** を 1 回押して直します。
 
-- **1 発で正解: 約 95〜97%**。残りは **違う** を 1 回押して直します。
-- 外れの多くは項目の取り違えではなく、表記の取り違え（全角か通常か、`MM/YY` か `MM/YYYY` か）です。
+| 経路 | 1 発で正解 | Top-3 | 所要時間 |
+| --- | --- | --- | --- |
+| Jev（AI Gateway・有料） | **97.1%** | 100% | 約 0.5 秒 |
+| Clef 27B（Cloudflare・無料） | **88.1%** | 98.3% | 約 1.3 秒 |
+
+外れの多くは項目の取り違えではなく、表記の取り違え（全角か通常か、`MM/YY` か `MM/YYYY` か）です。
+Clef は Jev より候補の役割を明示する必要があるため、経路ごとに計測済みの書き方を送っています
+（`JevPrompt.CandidateStyle`）。明示しない場合、Clef は 77% まで落ちます。
 
 ```bash
 python3 eval/build-fixtures.py          # アプリと同じコードで問い合わせを組み立て直す

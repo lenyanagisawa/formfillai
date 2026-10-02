@@ -9,6 +9,27 @@ import Foundation
 /// 文字列の生成・変換は一切させず、登録された値も渡さない。
 public enum JevPrompt {
 
+    /// 候補の説明の書き方。モデルによって効く書き方が違うので、経路ごとに計測した方を使う。
+    ///
+    /// Jev は項目名だけで「分割されていない欄には項目全体を選ぶ」という指示に従える（実測 97.1%）。
+    /// Clef は従いにくく、通常の欄でも「姓だけ」「市外局番だけ」を選んでしまう。
+    /// 候補そのものに役割を書くと 77.1% → 87.2% に改善した（clef）。
+    public enum CandidateStyle: Sendable {
+        case plain
+        case annotated
+
+        func describe(_ candidate: VirtualCandidate) -> String {
+            switch self {
+            case .plain:
+                return candidate.criteria
+            case .annotated:
+                return candidate.variant == .raw
+                    ? "\(candidate.criteria)（項目全体。通常の入力欄にはこれを選ぶ）"
+                    : "【分割・表記指定の欄専用】\(candidate.criteria)"
+            }
+        }
+    }
+
     public static let questionKey = "field"
     /// 「該当なし」の選択肢。アプリ内部では `VirtualCandidate.noneId` として扱う。
     public static let noneOptionKey = "none_of_the_above"
@@ -30,8 +51,12 @@ public enum JevPrompt {
     // MARK: - リクエスト
 
     /// `{ "state": …, "questions": { "field": { type, instructions, criteria } } }`
-    public static func request(context: FieldContext, candidates: [VirtualCandidate]) -> OrderedJSON {
-        var criteria = candidates.map { (key: $0.id, value: OrderedJSON.string($0.criteria)) }
+    public static func request(
+        context: FieldContext,
+        candidates: [VirtualCandidate],
+        style: CandidateStyle = .plain
+    ) -> OrderedJSON {
+        var criteria = candidates.map { (key: $0.id, value: OrderedJSON.string(style.describe($0))) }
         criteria.append((noneOptionKey, .string("上記のどの登録情報も、この入力欄には当てはまらない")))
 
         return .object([

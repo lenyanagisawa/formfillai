@@ -80,7 +80,7 @@ The question sent to the model is built inside the app, so every route gives the
 
 | Route | What you need | Notes |
 | --- | --- | --- |
-| **Cloudflare Clef** — free | A Cloudflare account ID and an API token with Workers AI access | Uses [Clef](https://developers.cloudflare.com/ai/models/@cf/cloudflare/clef-flash/), Cloudflare's own decision model. Same contract as Jev. Covered by the free allowance of 10,000 Neurons/day — about 30 Neurons per fill, so roughly 300 fills a day at no cost. |
+| **Cloudflare Clef** — free | A Cloudflare account ID and an API token with Workers AI access | Uses [Clef](https://developers.cloudflare.com/ai/models/@cf/cloudflare/clef/), Cloudflare's own decision model — same contract as Jev, no credit card. Covered by the free allowance of 10,000 Neurons/day: about 80 Neurons per fill, so **roughly 125 fills a day at no cost**. Less accurate than Jev (**88%** vs 97%, measured). |
 | **Vercel AI Gateway (direct)** | An [AI Gateway API key](https://vercel.com/docs/ai-gateway) and paid credits | Runs Jev. No server to deploy. Uses the endpoint the official SDK uses internally, which is not publicly documented and may change. |
 | **Your own relay** | Deploy [`relay/`](relay/) to Vercel | Keeps the API key off the device; share one deployment across a team. ~0.3 s slower. |
 | **TypeSafe AI (direct)** | A TypeSafe API key | Implemented from public information; **not verified** against the live API. |
@@ -108,10 +108,16 @@ The relay holds no prompt and logs no request bodies — it only forwards the qu
 
 ## Accuracy
 
-Measured on 115 cases with ~105 candidates (`eval/`), in "always fill" mode:
+Measured on 115 cases with ~105 candidates (`eval/`), in "always fill" mode. The rest are fixed with one click on **違う**.
 
-- **Correct on the first try: ~95–97%.** The rest are fixed with one click on **違う**.
-- Typical misses are notation-level (full-width vs. normal, `MM/YY` vs. `MM/YYYY`), not picking the wrong item.
+| Route | Correct on the first try | Top-3 | Latency |
+| --- | --- | --- | --- |
+| Jev (AI Gateway, paid) | **97.1%** | 100% | ~0.5 s |
+| Clef 27B (Cloudflare, free) | **88.1%** | 98.3% | ~1.3 s |
+
+Typical misses are notation-level (full-width vs. normal, `MM/YY` vs. `MM/YYYY`), not picking the wrong item.
+Clef needs the candidates spelled out more explicitly than Jev does, so each route sends the wording it was measured with
+(`JevPrompt.CandidateStyle`); without that, Clef scores 77%.
 
 ```bash
 python3 eval/build-fixtures.py          # rebuilds requests with the app's real prompt code

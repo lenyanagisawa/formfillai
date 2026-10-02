@@ -53,6 +53,8 @@ enum EvalExport {
                 ("title", .optional(testCase.context.field.title)),
                 ("expected", .string(expectedId)),
                 ("body", JevPrompt.request(context: testCase.context, candidates: candidates)),
+                // Clef 向けは候補の説明の書き方が違う。経路ごとに計測した方を使う。
+                ("bodyAnnotated", JevPrompt.request(context: testCase.context, candidates: candidates, style: .annotated)),
             ])
         }
         print(OrderedJSON.array(requests).serialized())

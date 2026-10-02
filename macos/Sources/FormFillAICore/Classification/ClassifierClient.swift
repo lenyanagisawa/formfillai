@@ -10,6 +10,7 @@ public final class ClassifierClient: @unchecked Sendable {
         case unauthorized
         case billingRequired(String?)
         case freeTierBlocked
+        case dailyQuotaExhausted
         case rateLimited
         case badStatus(Int, String?)
         case timedOut
@@ -26,6 +27,11 @@ public final class ClassifierClient: @unchecked Sendable {
                 return """
                     Jev は無料枠では使えなくなりました。AI Gateway でクレジットを購入すると使えます（$1 から・1回あたり約0.02円）。
                     Vercel のダッシュボード → AI Gateway → Credits
+                    """
+            case .dailyQuotaExhausted:
+                return """
+                    今日の無料枠（1 日 10,000 ニューロン、約 125 回）を使い切りました。
+                    日付が変わると回復します（UTC 0 時 = 日本時間 午前 9 時）。
                     """
             case .billingRequired(let detail):
                 return detail ?? "AI Gateway の課金設定が必要です。Vercel のダッシュボードを確認してください。"
@@ -62,7 +68,7 @@ public final class ClassifierClient: @unchecked Sendable {
         candidates: [VirtualCandidate],
         settings: AppSettings
     ) async throws -> ClassificationResult {
-        let body = JevPrompt.request(context: context, candidates: candidates)
+        let body = JevPrompt.request(context: context, candidates: candidates, style: settings.connection.candidateStyle)
         let timeoutMs = max(1000, Int(settings.requestTimeout * 1000) - 300)
         guard var request = settings.connection.makeRequest(
             body: body, credentials: settings.credentials, timeoutMs: timeoutMs
@@ -122,6 +128,9 @@ public final class ClassifierClient: @unchecked Sendable {
         // 課金まわりの問題は、経路によって 403 だったり 402 だったりする。
         // ステータスより先に本文で判断しないと「キーが違う」と誤って案内してしまう。
         if let message {
+            if message.range(of: "daily free allocation|free allocation of", options: [.regularExpression, .caseInsensitive]) != nil {
+                throw ClassifierError.dailyQuotaExhausted
+            }
             if message.range(of: "free tier", options: .caseInsensitive) != nil {
                 throw ClassifierError.freeTierBlocked
             }
@@ -146,6 +155,10 @@ public final class ClassifierClient: @unchecked Sendable {
         }
         if let text = object["error"] as? String { return String(text.prefix(300)) }
         if let nested = object["error"] as? [String: Any], let text = nested["message"] as? String {
+            return String(text.prefix(300))
+        }
+        // Cloudflare は errors の配列で返す。
+        if let errors = object["errors"] as? [[String: Any]], let text = errors.first?["message"] as? String {
             return String(text.prefix(300))
         }
         return nil

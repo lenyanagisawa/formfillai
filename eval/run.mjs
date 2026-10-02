@@ -36,9 +36,11 @@ function resolveRoute() {
     const token = process.env.CLOUDFLARE_API_TOKEN
     if (!account || !token) exitWith('CLOUDFLARE_ACCOUNT_ID / CLOUDFLARE_API_TOKEN が設定されていません')
     return {
-      label: 'Cloudflare Clef（clef-flash）',
-      url: `https://api.cloudflare.com/client/v4/accounts/${account}/ai/run/@cf/cloudflare/clef-flash`,
+      label: `Cloudflare Clef（${process.env.CLEF_MODEL ?? "clef-flash"}）`,
+      url: `https://api.cloudflare.com/client/v4/accounts/${account}/ai/run/@cf/cloudflare/${process.env.CLEF_MODEL ?? "clef-flash"}`,
       headers: { Authorization: `Bearer ${token}` },
+      // Clef 向けの書き方（計測済み）を使う。
+      pickBody: (entry) => entry.bodyAnnotated ?? entry.body,
       extend: (body) => body,
       // Cloudflare は本体を result で包む。
       unwrap: (json) => json.result ?? json,
@@ -84,7 +86,7 @@ async function runCase(testCase) {
     const response = await fetch(route.url, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json', ...route.headers },
-      body: JSON.stringify(route.extend(testCase.body)),
+      body: JSON.stringify(route.extend((route.pickBody ?? ((e) => e.body))(testCase))),
       signal: AbortSignal.timeout(10000),
     })
     const latencyMs = Date.now() - startedAt

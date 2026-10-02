@@ -25,11 +25,16 @@ public enum JevConnection: String, CaseIterable, Codable, Sendable, Identifiable
         }
     }
 
+    /// このモデルで計測した、候補の説明の書き方。
+    public var candidateStyle: JevPrompt.CandidateStyle {
+        self == .cloudflare ? .annotated : .plain
+    }
+
     public var summary: String {
         switch self {
         case .cloudflare:
-            return "Cloudflare の判断モデル Clef を使います。1 日 10,000 ニューロンの無料枠で、1 回あたり約 30 ニューロン（1 日 300 回ほど）まで無料です。"
-        case .gateway: return "自分の AI Gateway API キーで直接つなぎます。Jev は有料クレジットが必要です。"
+            return "Cloudflare の判断モデル Clef を使います。1 日 10,000 ニューロンの無料枠で、1 回あたり約 80 ニューロン（1 日 125 回ほど）。実測の正解率は 88%（Jev は 97%）。"
+        case .gateway: return "Jev を使います。一番正確（実測 97%）ですが、AI Gateway の有料クレジットが必要です。"
         case .typesafe: return "提供元の API に直接つなぎます。公開情報をもとに実装していますが、実際の疎通は確認できていません。"
         case .relay: return "relay/ をデプロイしたサーバーを経由します。API キーを端末に置かずに済みます。"
         }
@@ -44,7 +49,8 @@ public enum JevConnection: String, CaseIterable, Codable, Sendable, Identifiable
         switch self {
         case .cloudflare:
             // Clef はモデルごとのパスに、state と questions をそのまま送る。
-            url = URL(string: "https://api.cloudflare.com/client/v4/accounts/\(credentials.cloudflareAccountId)/ai/run/@cf/cloudflare/clef-flash")
+            // clef-flash（9B）は速くて安いが実測 77%。clef（27B）の 88% を採る。
+            url = URL(string: "https://api.cloudflare.com/client/v4/accounts/\(credentials.cloudflareAccountId)/ai/run/@cf/cloudflare/clef")
             headers["Authorization"] = "Bearer \(credentials.cloudflareToken)"
 
         case .gateway:

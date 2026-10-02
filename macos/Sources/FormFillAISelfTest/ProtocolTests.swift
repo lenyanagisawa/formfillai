@@ -32,6 +32,10 @@ func runProtocolTests(_ t: Harness) {
     // 選択肢の並び（よく使うものが前）は意味を持つので、直列化で崩れてはいけない。
     let firstTwo = Fixtures.candidates.prefix(2).map(\.id)
     t.expectTrue(encoded.range(of: firstTwo[0])!.lowerBound < encoded.range(of: firstTwo[1])!.lowerBound, "選択肢の順序が保たれる")
+    let annotated = JevPrompt.request(context: Fixtures.context, candidates: Fixtures.candidates, style: .annotated).serialized()
+    t.expectTrue(annotated.contains("項目全体。通常の入力欄にはこれを選ぶ") && annotated.contains("【分割・表記指定の欄専用】"),
+                 "Clef 向けの書き方では、候補そのものに役割を書く")
+    t.expectTrue(!encoded.contains("【分割"), "Jev 向けは計測済みの書き方のまま")
     t.expect(JevPrompt.positionHint(index: 2, count: 3) ?? "", "同じ種類の入力欄が3つ並んでいるうちの2番目（中央）", "並び順は言葉で渡す")
     t.expectTrue(JevPrompt.positionHint(index: nil, count: nil) == nil, "並んでいなければヒントを付けない")
 
