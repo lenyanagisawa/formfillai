@@ -52,8 +52,8 @@ The model never generates or edits text. All transformations are deterministic l
 
 ## Getting started
 
-> **Cost:** Jev requires paid AI Gateway credits (from $1); it is no longer on the free tier.
-> A fill costs about $0.00015, so $1 lasts a few thousand fills.
+> **Cost:** Jev is no longer on the AI Gateway free tier (the free promotion ended 2026-09-25), and the minimum credit
+> purchase is $10. To use this for free, pick the **Cloudflare Clef** route instead — about 300 fills a day at no cost.
 
 Requires macOS 14+. Xcode is **not** required — the Command Line Tools are enough.
 
@@ -80,14 +80,15 @@ The question sent to the model is built inside the app, so every route gives the
 
 | Route | What you need | Notes |
 | --- | --- | --- |
-| **Vercel AI Gateway (direct)** — default | An [AI Gateway API key](https://vercel.com/docs/ai-gateway) | No server to deploy. Fastest (~0.5 s). Uses the endpoint the official SDK uses internally, which is not publicly documented and may change. |
+| **Cloudflare Clef** — free | A Cloudflare account ID and an API token with Workers AI access | Uses [Clef](https://developers.cloudflare.com/ai/models/@cf/cloudflare/clef-flash/), Cloudflare's own decision model. Same contract as Jev. Covered by the free allowance of 10,000 Neurons/day — about 30 Neurons per fill, so roughly 300 fills a day at no cost. |
+| **Vercel AI Gateway (direct)** | An [AI Gateway API key](https://vercel.com/docs/ai-gateway) and paid credits | Runs Jev. No server to deploy. Uses the endpoint the official SDK uses internally, which is not publicly documented and may change. |
 | **Your own relay** | Deploy [`relay/`](relay/) to Vercel | Keeps the API key off the device; share one deployment across a team. ~0.3 s slower. |
 | **TypeSafe AI (direct)** | A TypeSafe API key | Implemented from public information; **not verified** against the live API. |
 
 **Jev is not available on the AI Gateway free tier** (as of October 2026 — it was free under a promotion that ended on
-2026-09-25). You need to buy AI Gateway credits, from $1. At $0.042 per million input tokens and ~3–4k tokens per fill,
-that is roughly **$0.00015 per fill** — $1 covers several thousand fills. Note that buying credits moves the account to
-the paid tier, which ends the monthly free credit.
+2026-09-25), and the minimum credit purchase is $10. At $0.042 per million input tokens and ~3–4k tokens per fill, a fill
+costs about **$0.00015**, so $10 covers tens of thousands of fills. Buying credits also moves the account to the paid
+tier, which ends the monthly free credit. **Cloudflare Clef is the free alternative.**
 
 <details>
 <summary>Deploying the relay</summary>

@@ -40,6 +40,7 @@ func runProtocolTests(_ t: Harness) {
     t.expectTrue(JevConnection.allCases.allSatisfy { !$0.isConfiguredForTest(credentials) }, "未設定の経路は使えない")
     credentials.gatewayKey = "gw-key"; credentials.typesafeKey = "ts-key"
     credentials.relayURL = "https://relay.example.com/api/evaluate"; credentials.relayToken = "relay-token"
+    credentials.cloudflareAccountId = "cf-account"; credentials.cloudflareToken = "cf-token"
     for connection in JevConnection.allCases {
         let request = connection.requestForTest(credentials: credentials)
         let body = String(decoding: request?.httpBody ?? Data(), as: UTF8.self)
@@ -47,15 +48,19 @@ func runProtocolTests(_ t: Harness) {
         t.expectTrue(body.contains("\"criteria\"") && body.contains(JevPrompt.noneOptionKey), "\(connection.rawValue): 同じ問い合わせ内容が送られる")
     }
 
-    t.section("Jev の回答の読み取り")
+    t.section("回答の読み取り（Jev と Clef の両方）")
     let responses: [(String, String)] = [
         ("AI Gateway", #"{"answers":{"field":{"type":"choice","choice":"a__raw","probabilities":{"a__raw":0.97,"none_of_the_above":0.03}}},"providerMetadata":{"typesafe":{"confidence":{"field":0.94}}}}"#),
         ("確率分布なし", #"{"answers":{"field":{"type":"choice","choice":"a__raw"}}}"#),
         ("該当なし", #"{"answers":{"field":{"type":"choice","choice":"none_of_the_above","probabilities":{"none_of_the_above":0.71}}}}"#),
+        ("Clef（result で包まれ、確信度が答えの中）",
+         #"{"result":{"model":"clef-flash","answers":{"field":{"type":"choice","choice":"b__raw","confidence":0.81,"probabilities":{"b__raw":0.88}}}}}"#),
     ]
     let parsed = responses.map { try? JevPrompt.parse(Data($0.1.utf8)) }
     t.expectTrue(parsed.allSatisfy { $0 != nil }, "どの形の回答も読める")
     t.expectTrue(parsed[0]?.selectedProbability == 0.97 && parsed[0]?.choiceConfidence == 0.94, "確率と確信度を取り出せる")
     t.expectTrue(parsed[1]?.selectedProbability == 0, "分布が無ければ確率 0（しきい値方式では自動入力しない）")
     t.expectTrue(parsed[2]?.selectedIsNone == true, "該当なしを NONE として扱う")
+    t.expectTrue(parsed[3]?.selectedCandidateId == "b__raw" && parsed[3]?.choiceConfidence == 0.81,
+                 "Clef の包みをほどき、答えの中の確信度を読める")
 }

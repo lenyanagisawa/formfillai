@@ -22,6 +22,9 @@ struct SettingsView: View {
                             .fixedSize(horizontal: false, vertical: true)
 
                         switch settings.connection {
+                        case .cloudflare:
+                            TextField("Cloudflare のアカウント ID", text: $settings.credentials.cloudflareAccountId)
+                            SecureField("Cloudflare の API トークン（Workers AI 権限）", text: $settings.credentials.cloudflareToken)
                         case .gateway:
                             SecureField("AI Gateway の API キー", text: $settings.credentials.gatewayKey)
                         case .typesafe:

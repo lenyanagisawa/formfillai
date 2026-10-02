@@ -79,15 +79,16 @@ AI Gateway の API Key は Vercel の環境変数のみ。この境界はセル�
 ## 8. システム構成
 
 ```
-FormFillAI ──┬─→ Vercel AI Gateway ─→ typesafe-ai/jev      （既定。自分の API キーで直接）
-             ├─→ TypeSafe AI ───────→ jev                   （直接。未検証）
-             └─→ 自前の中継サーバー ─→ AI Gateway ─→ jev    （キーを端末に置きたくない場合）
+FormFillAI ──┬─→ Cloudflare Workers AI ─→ clef-flash        （無料枠あり。1 日 300 回ほど無料）
+             ├─→ Vercel AI Gateway ────→ typesafe-ai/jev    （有料クレジットが必要）
+             ├─→ TypeSafe AI ──────────→ jev                （直接。未検証）
+             └─→ 自前の中継サーバー ───→ AI Gateway ─→ jev  （キーを端末に置きたくない場合）
 ```
 
 問い合わせの内容（指示文・候補・入力欄の文脈）はアプリの中で組み立てる。どの経路でも同じ問い合わせになるので、精度は経路に依存しない。
 中継サーバーは指示文を持たず、受け取った問い合わせを渡すだけ。
 
-Jev は AI Gateway の無料枠の対象外（2026年10月時点）。クレジットの購入が必要で、1 回あたり約 0.02 円。
+Jev は AI Gateway の無料枠の対象外（2026年10月時点、最低購入額 $10、1 回あたり約 0.02 円）。無料で使う場合は Clef を選ぶ。
 
 ## 9. 実測（115 ケース・候補 約 105 個）
 

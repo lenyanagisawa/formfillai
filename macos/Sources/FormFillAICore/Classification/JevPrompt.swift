@@ -1,9 +1,9 @@
 import Foundation
 
-/// Jev への問い合わせ内容を組み立て、回答を読み解く。
+/// 判断モデル（Jev / Clef）への問い合わせ内容を組み立て、回答を読み解く。
 ///
 /// 指示文はここ 1 か所にだけ置く。どの経路（AI Gateway 直結 / TypeSafe 直結 / 自前の中継サーバー）で
-/// 呼んでも同じ問い合わせになるので、経路によって精度が変わらない。
+/// 呼んでも同じ問い合わせになるので、経路によってモデルへの指示が変わらない。
 ///
 /// Jev にさせるのは「用意された候補のうちどれを入れるか」の選択 1 回だけ。
 /// 文字列の生成・変換は一切させず、登録された値も渡さない。
@@ -88,15 +88,20 @@ public enum JevPrompt {
         struct Answer: Decodable {
             let choice: String
             let probabilities: [String: Double]?
+            /// Clef は答えの中に確信度を入れる。
+            let confidence: Double?
         }
-        let answers: [String: Answer]
-        let providerMetadata: ProviderMetadata?
-
         struct ProviderMetadata: Decodable {
             struct TypeSafe: Decodable { let confidence: [String: Double]? }
             let typesafe: TypeSafe?
         }
+        let answers: [String: Answer]
+        /// Jev（AI Gateway）は providerMetadata の側に確信度を入れる。
+        let providerMetadata: ProviderMetadata?
     }
+
+    /// Cloudflare の REST API は本体を `result` で包む。包まれていればほどく。
+    private struct CloudflareEnvelope: Decodable { let result: Response }
 
     public enum ParseError: LocalizedError {
         case missingAnswer
@@ -105,8 +110,10 @@ public enum JevPrompt {
 
     /// 経路によらず共通の `{ answers, providerMetadata? }` を読む。
     public static func parse(_ data: Data) throws -> ClassificationResult {
-        let response = try JSONDecoder().decode(Response.self, from: data)
-        guard let answer = response.answers[questionKey] else { throw ParseError.missingAnswer }
+        let decoder = JSONDecoder()
+        let response = (try? decoder.decode(Response.self, from: data))
+            ?? (try? decoder.decode(CloudflareEnvelope.self, from: data).result)
+        guard let response, let answer = response.answers[questionKey] else { throw ParseError.missingAnswer }
 
         func candidateId(_ key: String) -> String { key == noneOptionKey ? VirtualCandidate.noneId : key }
 
@@ -119,7 +126,7 @@ public enum JevPrompt {
             selectedCandidateId: candidateId(answer.choice),
             // 分布が返らなければ確率不明として 0。しきい値方式では自動入力されない。
             selectedProbability: answer.probabilities?[answer.choice] ?? 0,
-            choiceConfidence: response.providerMetadata?.typesafe?.confidence?[questionKey],
+            choiceConfidence: answer.confidence ?? response.providerMetadata?.typesafe?.confidence?[questionKey],
             alternatives: Array(alternatives.prefix(8))
         )
     }

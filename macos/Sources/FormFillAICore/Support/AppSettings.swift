@@ -16,6 +16,7 @@ public final class AppSettings: ObservableObject {
     private enum Key {
         static let relayURL = "endpointURL"
         static let connection = "connection"
+        static let cloudflareAccount = "cloudflareAccountId"
         static let threshold = "autoPasteThreshold"
         static let timeout = "requestTimeout"
         static let logging = "loggingEnabled"
@@ -34,8 +35,10 @@ public final class AppSettings: ObservableObject {
     @Published public var credentials: JevConnection.Credentials {
         didSet {
             defaults.set(credentials.relayURL, forKey: Key.relayURL)
+            defaults.set(credentials.cloudflareAccountId, forKey: Key.cloudflareAccount)
             try? secrets.saveAll([
                 "gatewayKey": credentials.gatewayKey,
+                "cloudflareToken": credentials.cloudflareToken,
                 "typesafeKey": credentials.typesafeKey,
                 "token": credentials.relayToken,
             ])
@@ -72,6 +75,8 @@ public final class AppSettings: ObservableObject {
         credentials.relayURL = defaults.string(forKey: Key.relayURL) ?? ""
         credentials.relayToken = stored["token"] ?? ""
         credentials.gatewayKey = stored["gatewayKey"] ?? ""
+        credentials.cloudflareAccountId = defaults.string(forKey: Key.cloudflareAccount) ?? ""
+        credentials.cloudflareToken = stored["cloudflareToken"] ?? ""
         credentials.typesafeKey = stored["typesafeKey"] ?? ""
         self.credentials = credentials
         self.connection = defaults.string(forKey: Key.connection).flatMap(JevConnection.init) ?? .gateway

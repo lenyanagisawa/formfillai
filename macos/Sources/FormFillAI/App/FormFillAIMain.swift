@@ -6,6 +6,7 @@ import FormFillAICore
 /// 画面を使わずに初期設定するための引数:
 ///
 ///   FormFillAI --import <file.json>            登録情報を取り込む（追加・更新のみ）
+///   FormFillAI --connect cloudflare <account-id> <token>  Cloudflare Clef につなぐ（無料枠あり）
 ///   FormFillAI --connect gateway <api-key>     AI Gateway に直接つなぐ
 ///   FormFillAI --connect typesafe <api-key>    TypeSafe AI に直接つなぐ
 ///   FormFillAI --connect relay <url> <token>   自前の中継サーバー経由でつなぐ
@@ -51,6 +52,7 @@ enum FormFillAIMain {
             case (.gateway, 2): credentials.gatewayKey = arguments[1]
             case (.typesafe, 2): credentials.typesafeKey = arguments[1]
             case (.relay, 3): (credentials.relayURL, credentials.relayToken) = (arguments[1], arguments[2])
+            case (.cloudflare, 3): (credentials.cloudflareAccountId, credentials.cloudflareToken) = (arguments[1], arguments[2])
             default: print("引数の数が合いません"); return 1
             }
             settings.credentials = credentials
@@ -61,7 +63,14 @@ enum FormFillAIMain {
         default:
             break
         }
-        print("使い方: --import <file.json> | --connect gateway <key> | --connect typesafe <key> | --connect relay <url> <token>")
+        print("""
+            使い方:
+              --import <file.json>
+              --connect cloudflare <account-id> <token>
+              --connect gateway <api-key>
+              --connect typesafe <api-key>
+              --connect relay <url> <token>
+            """)
         return 1
     }
 }

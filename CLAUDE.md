@@ -40,7 +40,9 @@ eval/                   profile.json + build-fixtures.py → cases.json / reques
 ## Jev への接続
 
 - **問い合わせの中身は `JevPrompt` だけが作る。** 指示文を経路側（relay など）に置かない。経路で精度が変わってしまう。
-- 経路は `JevConnection`: `gateway`（既定・AI Gateway 直結）/ `typesafe`（未検証）/ `relay`（自前の中継）。
+- 経路は `JevConnection`: `cloudflare`（Clef・無料枠あり）/ `gateway`（AI Gateway 経由の Jev・有料）/ `typesafe`（未検証）/ `relay`（自前の中継）。
+  Jev と Clef は同じ契約（state + 型付きの質問 → 選択肢ごとの確率）なので、違いは URL・ヘッダ・包みの有無だけ。
+  Clef は本体を `result` で包み、確信度を答えの中に入れる。Jev は包まず `providerMetadata` に入れる。両方 `JevPrompt.parse` が吸収する。
   経路ごとの違いは URL・ヘッダ・追加フィールドだけで、`makeRequest` に閉じている。
 - AI Gateway 直結のエンドポイント（`/v4/ai/evaluation-model`）は `@ai-sdk/gateway` の内部プロトコル。
   公開ドキュメントに無いので、SDK 更新で変わったら `JevConnection` と `eval/run.mjs` の 2 か所を直す。

@@ -1,8 +1,11 @@
 #!/usr/bin/env node
 // 精度評価。eval/requests.json（アプリと同じコードで組み立てた問い合わせ）を Jev に投げて採点する。
 //
-//   # AI Gateway に直接
-//   AI_GATEWAY_API_KEY=... node eval/run.mjs
+//   # Cloudflare Clef（無料枠あり）
+//   FORMFILLAI_PROVIDER=cloudflare CLOUDFLARE_ACCOUNT_ID=... CLOUDFLARE_API_TOKEN=... node eval/run.mjs
+//
+//   # Vercel AI Gateway 経由の Jev
+//   FORMFILLAI_PROVIDER=gateway AI_GATEWAY_API_KEY=... node eval/run.mjs
 //
 //   # 自前の中継サーバー経由
 //   FORMFILLAI_PROVIDER=relay FORMFILLAI_ENDPOINT=https://<host>/api/evaluate FORMFILLAI_TOKEN=... node eval/run.mjs
@@ -28,6 +31,19 @@ const cases = only.length ? all.filter((entry) => only.includes(entry.id)) : all
 console.log(`▶ ${cases.length} ケース → ${route.label}\n`)
 
 function resolveRoute() {
+  if (provider === 'cloudflare') {
+    const account = process.env.CLOUDFLARE_ACCOUNT_ID
+    const token = process.env.CLOUDFLARE_API_TOKEN
+    if (!account || !token) exitWith('CLOUDFLARE_ACCOUNT_ID / CLOUDFLARE_API_TOKEN が設定されていません')
+    return {
+      label: 'Cloudflare Clef（clef-flash）',
+      url: `https://api.cloudflare.com/client/v4/accounts/${account}/ai/run/@cf/cloudflare/clef-flash`,
+      headers: { Authorization: `Bearer ${token}` },
+      extend: (body) => body,
+      // Cloudflare は本体を result で包む。
+      unwrap: (json) => json.result ?? json,
+    }
+  }
   if (provider === 'relay') {
     const url = process.env.FORMFILLAI_ENDPOINT
     if (!url) exitWith('FORMFILLAI_ENDPOINT が設定されていません')
@@ -75,7 +91,8 @@ async function runCase(testCase) {
     if (!response.ok) {
       return { ...base, latencyMs, error: `HTTP ${response.status}: ${(await response.text()).slice(0, 120)}` }
     }
-    const answer = (await response.json()).answers?.[QUESTION]
+    const json = await response.json()
+    const answer = (route.unwrap ? route.unwrap(json) : json).answers?.[QUESTION]
     const probabilities = answer?.probabilities ?? {}
     const ranking = Object.entries(probabilities).sort((a, b) => b[1] - a[1]).map(([key]) => key)
     if (ranking[0] !== answer.choice) ranking.unshift(answer.choice)

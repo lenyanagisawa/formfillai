@@ -1,11 +1,16 @@
 import Foundation
 
-/// Jev へ届く経路。どれを選んでも問い合わせ内容（JevPrompt）は同じ。
+/// 判断モデルへ届く経路。どれを選んでも問い合わせ内容（JevPrompt）は同じ。
+///
+/// Jev と Clef は同じ契約（state + 型付きの質問 → 選択肢ごとの確率）なので、
+/// 違いは URL・ヘッダ・包みの有無だけに収まる。
 public enum JevConnection: String, CaseIterable, Codable, Sendable, Identifiable {
     /// Vercel AI Gateway に自分の API キーで直接つなぐ。サーバーを立てなくてよい。
     case gateway
     /// 提供元の TypeSafe AI に直接つなぐ。
     case typesafe
+    /// Cloudflare Workers AI の Clef。1 日 10,000 ニューロンの無料枠で使える。
+    case cloudflare
     /// 自分で立てた中継サーバー経由。API キーを端末に置きたくない場合やチームで共有する場合。
     case relay
 
@@ -13,6 +18,7 @@ public enum JevConnection: String, CaseIterable, Codable, Sendable, Identifiable
 
     public var title: String {
         switch self {
+        case .cloudflare: return "Cloudflare Clef（無料枠あり）"
         case .gateway: return "Vercel AI Gateway（直接）"
         case .typesafe: return "TypeSafe AI（直接・未検証）"
         case .relay: return "自前の中継サーバー"
@@ -21,7 +27,9 @@ public enum JevConnection: String, CaseIterable, Codable, Sendable, Identifiable
 
     public var summary: String {
         switch self {
-        case .gateway: return "自分の AI Gateway API キーで直接つなぎます。サーバーの用意は不要です。"
+        case .cloudflare:
+            return "Cloudflare の判断モデル Clef を使います。1 日 10,000 ニューロンの無料枠で、1 回あたり約 30 ニューロン（1 日 300 回ほど）まで無料です。"
+        case .gateway: return "自分の AI Gateway API キーで直接つなぎます。Jev は有料クレジットが必要です。"
         case .typesafe: return "提供元の API に直接つなぎます。公開情報をもとに実装していますが、実際の疎通は確認できていません。"
         case .relay: return "relay/ をデプロイしたサーバーを経由します。API キーを端末に置かずに済みます。"
         }
@@ -34,6 +42,11 @@ public enum JevConnection: String, CaseIterable, Codable, Sendable, Identifiable
         let url: URL?
 
         switch self {
+        case .cloudflare:
+            // Clef はモデルごとのパスに、state と questions をそのまま送る。
+            url = URL(string: "https://api.cloudflare.com/client/v4/accounts/\(credentials.cloudflareAccountId)/ai/run/@cf/cloudflare/clef-flash")
+            headers["Authorization"] = "Bearer \(credentials.cloudflareToken)"
+
         case .gateway:
             // @ai-sdk/gateway が内部で使っているエンドポイント。公開ドキュメントには無いため、
             // SDK の更新で変わる可能性がある。変わったらここだけ直せばよい。
@@ -66,6 +79,8 @@ public enum JevConnection: String, CaseIterable, Codable, Sendable, Identifiable
 
     func isConfigured(_ credentials: Credentials) -> Bool {
         switch self {
+        case .cloudflare:
+            return !credentials.cloudflareAccountId.isEmpty && !credentials.cloudflareToken.isEmpty
         case .gateway: return !credentials.gatewayKey.isEmpty
         case .typesafe: return !credentials.typesafeKey.isEmpty
         case .relay: return URL(string: credentials.relayURL)?.scheme?.hasPrefix("http") == true
@@ -75,6 +90,8 @@ public enum JevConnection: String, CaseIterable, Codable, Sendable, Identifiable
     /// 経路ごとの接続情報。キーとトークンは Keychain に保存される。
     public struct Credentials: Sendable {
         public var gatewayKey = ""
+        public var cloudflareAccountId = ""
+        public var cloudflareToken = ""
         public var typesafeKey = ""
         public var relayURL = ""
         public var relayToken = ""
